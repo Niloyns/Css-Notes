@@ -1,0 +1,142 @@
+/* =========================================================
+   CSS BOX MODEL – FULL STUDY NOTES
+   ========================================================= */
+
+/* =========================================================
+   1. CONTENT
+   ---------------------------------------------------------
+   This is the actual area where:
+   - text
+   - images
+   - elements appear
+
+   Controlled by:
+   width and height
+   ========================================================= */
+
+.box-model-demo {
+  width: 300px; /* content width */
+  height: 120px; /* content height */
+  background: #1e293b; /* background applies to content + padding */
+}
+
+/* =========================================================
+   2. PADDING
+   ---------------------------------------------------------
+   Padding creates INNER space
+   between content and border
+
+   Padding increases total visible size
+   ========================================================= */
+
+.box-model-demo {
+  padding: 20px; /* space inside box */
+}
+
+/* =========================================================
+   3. BORDER
+   ---------------------------------------------------------
+   Border wraps padding and content
+   ========================================================= */
+
+.box-model-demo {
+  border: 4px solid #38bdf8;
+}
+
+/* =========================================================
+   4. MARGIN
+   ---------------------------------------------------------
+   Margin creates space OUTSIDE the box
+   separating it from other elements
+   ========================================================= */
+
+.box-model-demo {
+  margin: 30px;
+}
+
+/* =========================================================
+   5. BOX MODEL FINAL VISUAL STYLE
+   ========================================================= */
+
+body {
+  background: #020617;
+  color: #e5e7eb;
+  font-family: system-ui, sans-serif;
+  padding: 20px;
+}
+
+/* =========================================================
+   6. BOX-SIZING PROPERTY
+   ---------------------------------------------------------
+   By default:
+   box-sizing: content-box;
+
+   Means:
+   width = content only
+   padding + border are added outside
+
+   Alternative:
+   box-sizing: border-box;
+
+   Means:
+   width includes content + padding + border
+   ========================================================= */
+
+/* container for comparison */
+.container {
+  display: flex;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+/* Common style */
+.box {
+  width: 200px;
+  padding: 20px;
+  border: 5px solid #f97316;
+  background: #334155;
+  text-align: center;
+}
+
+/* Default behavior */
+.content-box {
+  box-sizing: content-box;
+}
+
+/* Recommended modern behavior */
+.border-box {
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   BOX SIZE CALCULATION EXAMPLE
+   ---------------------------------------------------------
+   For .content-box:
+   width = 200px
+   padding = 20px left + 20px right = 40px
+   border = 5px + 5px = 10px
+
+   TOTAL WIDTH = 200 + 40 + 10 = 250px
+
+   For .border-box:
+   TOTAL WIDTH = 200px (fixed)
+   Content shrinks to fit border + padding
+   ========================================================= */
+
+/* =========================================================
+   IMPORTANT INTERVIEW NOTES
+   ========================================================= */
+
+/*
+1. Box Model Parts:
+   Content → Padding → Border → Margin
+
+2. background-color applies to:
+   Content + Padding (NOT margin)
+
+3. box-sizing: border-box is best practice
+   because it prevents unexpected size growth
+
+4. Margin is transparent
+   Padding shows background
+*/

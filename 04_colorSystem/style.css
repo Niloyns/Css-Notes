@@ -1,0 +1,221 @@
+/* Basic layout for demo */
+
+* {
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+h1,
+h2 {
+  margin-bottom: 10px;
+}
+
+section {
+  margin-bottom: 20px;
+}
+
+.demo-box {
+  margin-top: 8px;
+  padding: 16px;
+  border-radius: 8px;
+  border: 2px solid #1f2937;
+  color: #ffffff;
+}
+
+/* =========================================================
+   CSS COLOR NUMBER SYSTEM - FULL NOTES (CODE EDITOR STYLE)
+   ========================================================= */
+
+/* =========================================================
+   1. WHAT IS A NUMBER SYSTEM?
+   ---------------------------------------------------------
+   A number system defines how numbers are written using symbols.
+
+   In CSS colors, number systems control:
+   - Red intensity
+   - Green intensity
+   - Blue intensity
+   - Transparency (Alpha)
+
+   All screen colors are combinations of Red + Green + Blue.
+   ========================================================= */
+
+/* =========================================================
+   2. DECIMAL NUMBER SYSTEM (BASE 10)
+   ---------------------------------------------------------
+   Digits used:
+   0 1 2 3 4 5 6 7 8 9
+
+   This is the normal counting system.
+
+   In CSS:
+   RGB values use Decimal numbers.
+
+   Range in colors:
+   0   = no intensity
+   255 = full intensity
+   ========================================================= */
+
+.decimal-example {
+  color: rgb(255, 0, 0); /* red */
+  color: rgb(0, 255, 0); /* green */
+  color: rgb(0, 0, 255); /* blue */
+}
+
+/* =========================================================
+   3. BINARY NUMBER SYSTEM (BASE 2)
+   ---------------------------------------------------------
+   Digits used:
+   0 and 1
+
+   Used internally by computers.
+
+   Example:
+   255 in binary = 11111111
+
+   CSS does NOT use binary directly.
+   Browsers convert RGB & HEX into binary for processing.
+   ========================================================= */
+
+/* =========================================================
+   4. HEXADECIMAL NUMBER SYSTEM (BASE 16)
+   ---------------------------------------------------------
+   Digits:
+   0 1 2 3 4 5 6 7 8 9 A B C D E F
+
+   A = 10
+   B = 11
+   C = 12
+   D = 13
+   E = 14
+   F = 15
+
+   Hex color format:
+   #RRGGBB
+
+   Each pair range:
+   00 = lowest
+   FF = highest
+
+   FF in hex = 255 in decimal
+   ========================================================= */
+
+.hex-examples {
+  background-color: #ff0000; /* red */
+  background-color: #00ff00; /* green */
+  background-color: #0000ff; /* blue */
+  background-color: #ffffff; /* white */
+  background-color: #000000; /* black */
+
+  /* Shorthand */
+  background-color: #f00; /* same as #ff0000 */
+}
+
+/* =========================================================
+   5. RGB COLOR SYSTEM
+   ---------------------------------------------------------
+   RGB = Red, Green, Blue
+
+   Format:
+   rgb(red, green, blue)
+
+   Range:
+   0 - 255
+
+   Meaning:
+   0   = no color
+   255 = full color
+   ========================================================= */
+
+.rgb-examples {
+  background-color: rgb(255, 0, 0); /* pure red */
+  background-color: rgb(0, 255, 0); /* pure green */
+  background-color: rgb(0, 0, 255); /* pure blue */
+  background-color: rgb(255, 255, 255); /* white */
+}
+
+/* =========================================================
+   6. RGBA COLOR SYSTEM
+   ---------------------------------------------------------
+   RGBA = Red, Green, Blue, Alpha
+
+   Alpha = transparency
+
+   Range:
+   0   = fully transparent
+   1   = fully visible
+
+   Format:
+   rgba(r, g, b, a)
+   ========================================================= */
+
+.rgba-examples {
+  background-color: rgba(255, 0, 0, 0.5); /* 50% transparent red */
+  background-color: rgba(0, 0, 0, 0.2); /* light transparent black */
+}
+
+/* =========================================================
+   7. HSL COLOR SYSTEM
+   ---------------------------------------------------------
+   HSL = Hue, Saturation, Lightness
+
+   Hue        = 0 - 360 (color wheel)
+   Saturation = % (color strength)
+   Lightness  = % (brightness)
+
+   Format:
+   hsl(h, s%, l%)
+
+   More human-friendly than RGB
+   ========================================================= */
+
+.hsl-examples {
+  background-color: hsl(0, 100%, 50%); /* red */
+  background-color: hsl(120, 100%, 50%); /* green */
+  background-color: hsl(240, 100%, 50%); /* blue */
+}
+
+/* =========================================================
+   8. HSLA COLOR SYSTEM
+   ---------------------------------------------------------
+   Same as HSL but adds Alpha
+
+   Format:
+   hsla(h, s%, l%, a)
+   ========================================================= */
+
+.hsla-example {
+  background-color: hsla(200, 80%, 50%, 0.5);
+}
+
+/* =========================================================
+   9. NUMBER SYSTEM COMPARISON
+   ---------------------------------------------------------
+   SAME RED COLOR REPRESENTATION:
+
+   RGB  : rgb(255, 0, 0)
+   HEX  : #FF0000
+   BIN  : 11111111 00000000 00000000
+
+   All represent the same RED.
+   ========================================================= */
+
+/* =========================================================
+   10. SIMPLE MEMORY NOTES
+   ---------------------------------------------------------
+   HEX  → Short & designer-friendly
+   RGB  → Precise & numeric control
+   RGBA → Adds transparency
+   HSL  → Easy for light/dark variants
+
+   Always remember:
+   Screen colors = Red + Green + Blue combination
+   ========================================================= */

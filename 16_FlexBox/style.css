@@ -1,0 +1,425 @@
+/* =========================================================
+   FLEXBOX — FULL NOTES (RIGHT LEARNING ORDER)
+   File: flexbox-notes.css
+   Code-editor style: concise comments + live example classes
+   ========================================================= */
+body {
+  background: #020617;
+  color: #e5e7eb;
+  font-family: system-ui, sans-serif;
+  padding: 20px;
+}
+
+h2 {
+  margin: 24px 0 8px;
+}
+
+.demo-box {
+  background: #0e172a;
+  border: 1px solid #334155;
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 20px;
+}
+
+.item {
+  background: #1d4ed8;
+  padding: 10px;
+  border-radius: 6px;
+  color: #fff;
+  text-align: center;
+}
+
+.item.small {
+  padding: 6px 10px;
+  background: #475569;
+}
+
+.small-text {
+  font-size: 12px;
+}
+.mid-text {
+  font-size: 18px;
+}
+.big-text {
+  font-size: 26px;
+}
+
+.tall-box {
+  height: 140px;
+}
+.multi-box {
+  height: 180px;
+}
+
+.card {
+  background: #1d4ed8;
+  padding: 20px;
+  border-radius: 10px;
+  color: #fff;
+}
+
+/* =========================================================
+   0. QUICK INTRO
+   ---------------------------------------------------------
+   Flexbox is a 1-dimensional layout system (row OR column).
+   It helps distribute space and align items along main & cross axis.
+
+   Two roles:
+   - flex container (parent)   => display: flex | inline-flex
+   - flex items (children)     => direct children of container
+
+   KEY CONCEPTS:
+   - main axis  : direction of flex (row / column)
+   - cross axis : perpendicular to main axis
+   ========================================================= */
+
+/* =========================================================
+   1. CREATE A FLEX CONTAINER
+   ---------------------------------------------------------*/
+/* display: flex;  /block-level flex container */
+/* display: inline-flex;  /inline-level flex container */
+/* =========================================================  */
+
+.flex-container {
+  display: flex;
+  /* inline: display: inline-flex; */
+}
+
+/* =========================================================
+   2. MAIN AXIS DIRECTION
+   ---------------------------------------------------------
+   flex-direction: row | row-reverse | column | column-reverse;
+   - row (default): main axis = horizontal left → right
+   - column       : main axis = vertical top → bottom
+   ========================================================= */
+
+.fx-row {
+  display: flex;
+  flex-direction: row; /* horizontal */
+}
+
+.fx-col {
+  display: flex;
+  flex-direction: column; /* vertical */
+}
+
+/* =========================================================
+   3. FLEX WRAPPING
+   ---------------------------------------------------------
+   flex-wrap: nowrap | wrap | wrap-reverse;
+   - nowrap (default): all items stay on one line (may shrink)
+   - wrap            : items wrap to next line
+   - wrap-reverse    : wrap with reversed cross-axis order
+   ========================================================= */
+
+.fx-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.fx-nowrap {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+/* =========================================================
+   4. FLEX FLOW (shorthand)
+   ---------------------------------------------------------
+   flex-flow: <flex-direction> <flex-wrap>;
+   Example: flex-flow: row wrap;
+   ========================================================= */
+
+.fx-flow {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+/* =========================================================
+   5. GAP between items (modern & preferred)
+   ---------------------------------------------------------
+   gap: <row-gap> <col-gap>;
+   Works for flex and grid—no need for margins hacks.
+   ========================================================= */
+
+.fx-gap {
+  display: flex;
+  gap: 12px; /* space between flex items */
+}
+
+/* =========================================================
+   6. MAIN-AXIS ALIGNMENT (JUSTIFY)
+   ---------------------------------------------------------
+   justify-content: flex-start | flex-end | center |
+                    space-between | space-around | space-evenly |
+                    start | end
+   Controls distribution along MAIN axis.
+   ========================================================= */
+
+.fx-justify-start {
+  justify-content: flex-start;
+} /* left/top */
+.fx-justify-end {
+  justify-content: flex-end;
+} /* right/bottom */
+.fx-justify-center {
+  justify-content: center;
+} /* center */
+.fx-justify-between {
+  justify-content: space-between;
+} /* edges spaced */
+.fx-justify-around {
+  justify-content: space-around;
+} /* space around */
+.fx-justify-evenly {
+  justify-content: space-evenly;
+} /* equal gaps */
+
+/* =========================================================
+   7. CROSS-AXIS ALIGNMENT (ALIGN-ITEMS)
+   ---------------------------------------------------------
+   align-items: stretch | flex-start | flex-end | center | baseline
+   Controls how items align along CROSS axis for single-line flex.
+   ========================================================= */
+
+.fx-align-stretch {
+  align-items: stretch;
+} /* default; items stretch to fill cross-size */
+.fx-align-start {
+  align-items: flex-start;
+}
+.fx-align-end {
+  align-items: flex-end;
+}
+.fx-align-center {
+  align-items: center;
+}
+.fx-align-baseline {
+  align-items: baseline;
+} /* align text baseline */
+
+/* =========================================================
+   8. MULTI-LINE ALIGNMENT (ALIGN-CONTENT)
+   ---------------------------------------------------------
+   align-content: flex-start | flex-end | center | space-between | space-around | stretch
+   Works when flex-wrap creates multiple lines; adjusts spacing between lines.
+   ========================================================= */
+
+.fx-align-content-center {
+  align-content: center;
+}
+.fx-align-content-stretch {
+  align-content: stretch;
+} /* default */
+
+/* =========================================================
+   9. FLEX ITEMS: SIZING SHORTHAND (flex)
+   ---------------------------------------------------------
+   flex: <grow> <shrink> <basis>;
+   Most common uses: */
+/* flex: 1;   /grow:1, shrink:1, basis:0% — fills remaining space */
+/* flex: 0 1 auto;   /do not grow, shrink if needed, size = auto */
+/* flex: 2 1 200px;   /grow twice as fast as flex:1 */
+/* =========================================================  */
+
+.item-flex-1 {
+  flex: 1;
+} /* quick equal-fill */
+.item-flex-2 {
+  flex: 2;
+} /* twice space than flex:1 */
+.item-no-grow {
+  flex: 0 1 auto;
+} /* fixed-size preferred */
+
+/* =========================================================
+   10. flex-grow, flex-shrink, flex-basis (detailed)
+   ---------------------------------------------------------
+   - flex-grow: how much item grows relative to others (default 0)
+   - flex-shrink: how much item shrinks when space is tight (default 1)
+   - flex-basis: initial main size (width for row, height for column)
+   ========================================================= */
+
+.item-grow {
+  flex-grow: 1; /* will expand to fill available space */
+}
+
+.item-shrink {
+  flex-shrink: 1; /* will shrink when container is too small */
+}
+
+.item-basis {
+  flex-basis: 200px; /* base size before grow/shrink calculation */
+}
+
+/* =========================================================
+   11. align-self (override container cross-axis alignment)
+   ---------------------------------------------------------
+   align-self: auto | flex-start | flex-end | center | baseline | stretch
+   Overrides align-items for a single item.
+   ========================================================= */
+
+.item-align-top {
+  align-self: flex-start;
+}
+.item-align-bottom {
+  align-self: flex-end;
+}
+.item-align-center {
+  align-self: center;
+}
+.item-align-stretch {
+  align-self: stretch;
+}
+
+/* =========================================================
+   12. ORDER (visual ordering)
+   ---------------------------------------------------------
+   order: <integer>; default 0
+   Lower order values appear first.
+   Use sparingly; DOM order is preferred for accessibility.
+   ========================================================= */
+
+.item-order-1 {
+  order: 1;
+}
+.item-order--1 {
+  order: -1;
+} /* negative values allowed */
+
+/* =========================================================
+   13. CENTERING A SINGLE ITEM (common patterns)
+   ---------------------------------------------------------
+   Horizontal + vertical center in a container:*/
+
+.center {
+  display: flex;
+  justify-content: center; /* horizontal */
+  align-items: center; /* vertical */
+}
+/* ========================================================= */
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* =========================================================
+   14. RESPONSIVE & MIN/MAX sizing WITH FLEX
+   ---------------------------------------------------------
+   - Use min-width / max-width and min-height / max-height on items
+   - Using flex-basis: auto respects content size
+   - Percentage flex-basis works relative to container's inner size
+   Example: flex: 1 1 200px; min-width: 150px;
+   ========================================================= */
+
+.responsive-item {
+  flex: 1 1 200px;
+  min-width: 150px;
+  max-width: 400px;
+}
+
+/* =========================================================
+   15. IMPLICIT vs EXPLICIT SIZING BEHAVIOR
+   ---------------------------------------------------------
+   - flex-basis: auto -> size based on content or width/height
+   - flex: 0 1 auto -> items keep their content size and can shrink
+   - flex: 1 -> items ignore content and distribute remaining space
+   ========================================================= */
+
+/* Example: auto-sized item */
+.item-auto {
+  flex: 0 1 auto;
+}
+
+/* =========================================================
+   16. ALIGNMENT ALONG BASELINE
+   ---------------------------------------------------------
+   align-items: baseline aligns text baselines for better typography alignment.
+   Use when items contain text you want to line up.
+   ========================================================= */
+
+.fx-baseline {
+  display: flex;
+  align-items: baseline;
+}
+
+/* =========================================================
+   17. NAVBAR / HORIZONTAL MENU PATTERN
+   ---------------------------------------------------------
+   Common structure: brand (left) + nav (center) + actions (right)
+   Example classes below.
+   ========================================================= */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* brand left, actions right */
+  gap: 12px;
+  padding: 12px;
+  background: #0f1724;
+}
+
+/* left brand + center nav group */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.nav-center {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.nav-right {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* =========================================================
+   18. IMAGE GALLERY / CARD GRID PATTERN
+   ---------------------------------------------------------
+   Use flex-wrap and gap for responsive row-based grids (1D).
+   For many rows + complex control prefer CSS Grid.
+   ========================================================= */
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.gallery .card {
+  flex: 1 1 220px; /* base card width 220px, grow/shrink as needed */
+  min-width: 180px;
+}
+
+/* =========================================================
+   19. COMMON PITFALLS & TIPS
+   ---------------------------------------------------------
+   - Avoid using order for core content order (screen-readers)
+   - Use gap instead of margins between items when possible
+   - If items shrink unexpectedly, check min-width/min-height and flex-basis
+   - For vertical centering in unknown height, use align-items:center on container
+   - When animating sizes, prefer transform: scale / translate for performance
+   - flex-basis: 0 vs flex-basis: auto differences:
+       * flex: 1 1 0 -> each item shares remaining space starting from 0
+       * flex: 1 1 auto -> items respect content size first
+   ========================================================= */
+
+/* =========================================================
+   20. SUMMARY (RIGHT ORDER TO LEARN)
+   ---------------------------------------------------------
+   1. display: flex / inline-flex
+   2. main axis: flex-direction
+   3. wrapping: flex-wrap
+   4. gap (spacing)
+   5. distribute on main axis: justify-content
+   6. align on cross axis: align-items
+   7. control single item: align-self
+   8. sizing: flex (grow / shrink / basis)
+   9. order: visual reordering
+   10. align-content for multi-line
+   ========================================================= */

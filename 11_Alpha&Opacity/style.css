@@ -1,0 +1,99 @@
+/* =========================================================
+   ALPHA & OPACITY – FULL STUDY NOTES
+   ========================================================= */
+
+/* =========================================================
+   1. WHAT IS ALPHA?
+   ---------------------------------------------------------
+   Alpha controls TRANSPARENCY of a COLOR only.
+
+   Used with:
+   - rgba(red, green, blue, alpha)
+   - hsla(hue, saturation, lightness, alpha)
+
+   Alpha range:
+   0   = fully transparent
+   1   = fully visible
+
+   IMPORTANT:
+   Alpha affects ONLY the background color,
+   NOT the text or child elements.
+   ========================================================= */
+
+.alpha-box {
+  background: rgba(34, 197, 94, 0.4); /* green with 40% transparency */
+  padding: 20px;
+  color: white;
+  border: 2px solid #22c55e;
+  margin-bottom: 20px;
+}
+
+/* =========================================================
+   2. WHAT IS OPACITY?
+   ---------------------------------------------------------
+   opacity controls transparency of the ENTIRE element.
+
+   It affects:
+   ✅ background
+   ✅ text
+   ✅ icons
+   ✅ child elements
+
+   Range:
+   0   = invisible
+   1   = fully visible
+   ========================================================= */
+
+.opacity-box {
+  background: #22c55e;
+  padding: 20px;
+  color: white;
+  border: 2px solid #166534;
+  opacity: 0.4; /* 40% visible (everything fades) */
+  margin-bottom: 20px;
+}
+
+/* =========================================================
+   3. COMPARISON STYLES
+   ========================================================= */
+
+.comparison {
+  display: flex;
+  gap: 20px;
+}
+
+.small {
+  width: 150px;
+  text-align: center;
+}
+
+/* =========================================================
+   INTERVIEW SUMMARY
+   ========================================================= */
+
+/*
+ALPHA:
+- Applied inside color value
+- Affects only the color layer
+- Best for overlays & backgrounds
+
+OPACITY:
+- Applied to full element
+- Affects all children
+- Fades whole element
+
+Memory Trick:
+Alpha = Color layer
+Opacity = Whole layer
+*/
+
+/* =========================================================
+   VISUAL SETUP
+   ========================================================= */
+
+body {
+  background: #020617;
+  color: #e5e7eb;
+  font-family: system-ui, sans-serif;
+  padding: 20px;
+}

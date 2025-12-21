@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Flexbox – Complete Notes Demo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>CSS Flexbox – Complete Demo</h1>
+    <p class="desc">
+      Resize the browser width and watch how each flex container behaves.
+    </p>
+
+    <!-- 2–3: Container + Direction -->
+    <section class="section">
+      <h2>1. flex-direction (row / column)</h2>
+
+      <h3>Row (default)</h3>
+      <div class="flex-demo fx-row fx-gap-sm">
+        <div class="flex-item">A</div>
+        <div class="flex-item">B</div>
+        <div class="flex-item">C</div>
+      </div>
+
+      <h3>Column</h3>
+      <div class="flex-demo fx-col">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+      </div>
+    </section>
+
+    <!-- 4: Wrap -->
+    <section class="section">
+      <h2>2. flex-wrap</h2>
+      <p class="desc">Wrap moves items to new lines when container is small.</p>
+
+      <div class="flex-demo fx-wrap fx-gap-sm">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+        <div class="flex-item">4</div>
+        <div class="flex-item">5</div>
+        <div class="flex-item">6</div>
+      </div>
+    </section>
+
+    <!-- 5 & 6: flex-flow + gap -->
+    <section class="section">
+      <h2>3. flex-flow + gap</h2>
+      <p class="desc">Row wrap with gap using shorthand flex-flow.</p>
+
+      <div class="flex-demo fx-flow-row-wrap fx-gap-lg">
+        <div class="flex-item">A</div>
+        <div class="flex-item">B</div>
+        <div class="flex-item">C</div>
+        <div class="flex-item">D</div>
+        <div class="flex-item">E</div>
+      </div>
+    </section>
+
+    <!-- 7: justify-content -->
+    <section class="section">
+      <h2>4. justify-content (main axis)</h2>
+
+      <h3>center</h3>
+      <div class="flex-demo flex-row-container fx-justify-center fx-gap-sm">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+      </div>
+
+      <h3>space-between</h3>
+      <div class="flex-demo flex-row-container fx-justify-between">
+        <div class="flex-item">Left</div>
+        <div class="flex-item">Right</div>
+      </div>
+
+      <h3>space-evenly</h3>
+      <div class="flex-demo flex-row-container fx-justify-evenly">
+        <div class="flex-item">A</div>
+        <div class="flex-item">B</div>
+        <div class="flex-item">C</div>
+      </div>
+    </section>
+
+    <!-- 8: align-items -->
+    <section class="section">
+      <h2>5. align-items (cross axis)</h2>
+      <p class="desc">
+        Container has fixed height to show cross-axis alignment.
+      </p>
+
+      <div
+        class="flex-demo flex-row-container fx-align-center fx-gap-sm tall-demo"
+      >
+        <div class="flex-item small-text">Short</div>
+        <div class="flex-item big-text">Tall</div>
+        <div class="flex-item small-text">Short</div>
+      </div>
+    </section>
+
+    <!-- 9: align-content -->
+    <section class="section">
+      <h2>6. align-content (multi-line)</h2>
+      <p class="desc">Only works when wrapping creates multiple rows.</p>
+
+      <div class="flex-demo fx-wrap fx-align-content-center multi-line-demo">
+        <div class="flex-item small">1</div>
+        <div class="flex-item small">2</div>
+        <div class="flex-item small">3</div>
+        <div class="flex-item small">4</div>
+        <div class="flex-item small">5</div>
+        <div class="flex-item small">6</div>
+        <div class="flex-item small">7</div>
+        <div class="flex-item small">8</div>
+      </div>
+    </section>
+
+    <!-- 10 & 11: flex, grow, basis -->
+    <section class="section">
+      <h2>7. flex shorthand + grow / basis</h2>
+      <p class="desc">flex:1 vs flex:2 vs no-grow. Resize horizontally.</p>
+
+      <div class="flex-demo flex-row-container fx-gap-sm">
+        <div class="flex-item item-flex-1">flex:1</div>
+        <div class="flex-item alt item-flex-2">flex:2</div>
+        <div class="flex-item item-no-grow">no-grow</div>
+      </div>
+
+      <p class="desc">grow + basis vs auto</p>
+      <div class="flex-demo flex-row-container fx-gap-sm">
+        <div class="flex-item item-grow item-basis-200">grow + 200px</div>
+        <div class="flex-item item-auto">auto</div>
+      </div>
+    </section>
+
+    <!-- 12: align-self -->
+    <section class="section">
+      <h2>8. align-self (per item)</h2>
+      <div class="flex-demo flex-row-container tall-demo">
+        <div class="flex-item item-self-start">top</div>
+        <div class="flex-item item-self-center">center</div>
+        <div class="flex-item item-self-end">bottom</div>
+      </div>
+    </section>
+
+    <!-- 13: order -->
+    <section class="section">
+      <h2>9. order (visual order only)</h2>
+      <p class="desc">
+        DOM order = 1,2,3 but order property changes visual order.
+      </p>
+
+      <div class="flex-demo flex-row-container fx-gap-sm">
+        <div class="flex-item">1</div>
+        <div class="flex-item item-order-1">2 (order:1)</div>
+        <div class="flex-item item-order--1">3 (order:-1)</div>
+      </div>
+    </section>
+
+    <!-- 16: baseline -->
+    <section class="section">
+      <h2>10. Baseline alignment</h2>
+      <div class="flex-demo fx-baseline-demo">
+        <div class="flex-item small-text">small</div>
+        <div class="flex-item big-text">BIG</div>
+        <div class="flex-item mid-text">mid</div>
+      </div>
+    </section>
+
+    <!-- 14 & 20: centering -->
+    <section class="section">
+      <h2>11. Full centering with flex</h2>
+      <div class="flex-demo center-box tall-demo">
+        <div class="flex-item">Perfect center</div>
+      </div>
+    </section>
+
+    <!-- 15: responsive item -->
+    <section class="section">
+      <h2>12. Responsive cards (flex + min/max)</h2>
+      <p class="desc">Resize window: cards grow/shrink & wrap.</p>
+      <div class="flex-demo demo-row-wrap">
+        <div class="flex-item responsive-item">Card 1</div>
+        <div class="flex-item responsive-item">Card 2</div>
+        <div class="flex-item responsive-item">Card 3</div>
+      </div>
+    </section>
+
+    <!-- 17: Navbar -->
+    <section class="section">
+      <h2>13. Navbar layout (flex)</h2>
+      <header class="navbar">
+        <div class="nav-left">
+          <div class="flex-item small">Logo</div>
+        </div>
+        <nav class="nav-center">
+          <div class="flex-item small">Home</div>
+          <div class="flex-item small">About</div>
+          <div class="flex-item small">Contact</div>
+        </nav>
+        <div class="nav-right">
+          <div class="flex-item small">Login</div>
+          <div class="flex-item small alt">Sign up</div>
+        </div>
+      </header>
+    </section>
+
+    <!-- 18: Gallery -->
+    <section class="section">
+      <h2>14. Gallery layout (1D)</h2>
+      <div class="flex-demo gallery">
+        <div class="flex-item gallery-card">Gallery 1</div>
+        <div class="flex-item gallery-card alt">Gallery 2</div>
+        <div class="flex-item gallery-card">Gallery 3</div>
+        <div class="flex-item gallery-card alt">Gallery 4</div>
+      </div>
+    </section>
+  </body>
+</html>

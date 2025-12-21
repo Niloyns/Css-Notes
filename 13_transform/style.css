@@ -1,0 +1,288 @@
+/* =========================================================
+   CSS TRANSFORM – FULL STUDY NOTES (RIGHT ORDER)
+   Code Editor Style
+   ========================================================= */
+
+/* =========================================================
+   0. BASIC PAGE & DEMO STYLES (FOR VISUAL ONLY)
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  background: #020617;
+  color: #e5e7eb;
+}
+
+h1 {
+  margin-bottom: 6px;
+}
+
+p.intro {
+  margin-bottom: 20px;
+  color: #9ca3af;
+}
+
+section {
+  margin-bottom: 26px;
+}
+
+.demo-box {
+  width: 200px;
+  height: 80px;
+  background: #1e293b;
+  border-radius: 8px;
+  border: 2px solid #38bdf8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8px;
+  cursor: pointer;
+  text-align: center;
+  /* NOTE: no transition here – we want to SEE instant transform */
+}
+
+/* =========================================================
+   1. WHAT IS transform?
+   ---------------------------------------------------------
+   transform changes HOW an element is drawn on the page
+   (its visual shape/position), WITHOUT changing the layout
+   space around it.
+
+   You can:
+   - move it (translate)
+   - resize it (scale)
+   - rotate it (rotate)
+   - tilt it (skew)
+   - combine many operations
+
+   IMPORTANT:
+   - transform does NOT push other elements like margin does.
+   - It only visually changes that element.
+   ========================================================= */
+
+/* No transform (baseline) */
+/* .t-none {
+
+} */
+
+/* =========================================================
+   2. BASIC SYNTAX
+   ---------------------------------------------------------
+   transform: <function>();
+
+   Examples:
+   transform: translate(30px, 10px);
+   transform: scale(1.2);
+   transform: rotate(10deg);
+   transform: skew(10deg, 0deg);
+
+   Multiple:
+   transform: translateX(20px) scale(1.1) rotate(5deg);
+   ========================================================= */
+/* (We’ll show real examples in next sections using :hover) */
+
+/* =========================================================
+   3. TRANSLATE – MOVE ELEMENT
+   ---------------------------------------------------------
+   translate(x, y)
+
+   x → horizontal move (left/right)
+   y → vertical move   (up/down)
+
+   Positive values:
+   - +x = move to the RIGHT
+   - +y = move DOWN
+
+   Negative values:
+   - -x = move to the LEFT
+   - -y = move UP
+
+   Shortcuts:
+   translateX(x)
+   translateY(y)
+   ========================================================= */
+
+.t-translate {
+  transition: transform 0.3s ease;
+}
+
+.t-translate:hover {
+  /* move 40px right, 0px vertically */
+  transform: translate(40px, 0);
+}
+
+.t-translate-x:hover {
+  /* move 40px right only */
+  transform: translateX(40px);
+}
+
+/* =========================================================
+   4. SCALE – RESIZE ELEMENT
+   ---------------------------------------------------------
+   scale(x, y)
+
+   1   = original size
+   > 1 = bigger
+   0–1 = smaller
+
+   Examples:
+   scale(1.2)      -> 120% width & height
+   scale(1.5, 1)   -> 150% width, same height
+   scale(1, 0.5)   -> same width, half height
+
+   Shortcuts:
+   scaleX(x)
+   scaleY(y)
+   ========================================================= */
+
+.t-scale:hover {
+  /* make box 130% of original size */
+  transform: scale(1.3);
+}
+
+/* =========================================================
+   5. ROTATE – ROTATE ELEMENT
+   ---------------------------------------------------------
+   rotate(angle)
+
+   - angle in degrees (deg)
+   - positive angle  = clockwise rotation
+   - negative angle  = anti-clockwise rotation
+
+   Examples:
+   rotate(10deg)
+   rotate(-15deg)
+   ========================================================= */
+
+.t-rotate:hover {
+  transform: rotate(12deg);
+}
+
+/* =========================================================
+   6. SKEW – TILT ELEMENT
+   ---------------------------------------------------------
+   skew(x-angle, y-angle)
+
+   skewX(angle) -> tilt left/right
+   skewY(angle) -> tilt up/down
+
+   Example:
+   skew(10deg, 0deg)   -> horizontal tilt
+   skew(0deg, 10deg)   -> vertical tilt
+   ========================================================= */
+
+.t-skew:hover {
+  transform: skew(12deg, 3deg);
+}
+
+/* =========================================================
+   7. transform-origin – PIVOT POINT
+   ---------------------------------------------------------
+   transform-origin sets the POINT around which
+   rotate / scale / skew happens.
+
+   Default:
+   transform-origin: 50% 50% (center);
+
+   Common values:
+   - left top
+   - center bottom
+   - right center
+   - 0% 0%      (top-left)
+   - 100% 100%  (bottom-right)
+   ========================================================= */
+
+.t-origin {
+  /* pivot point = bottom-left corner */
+  transform-origin: left bottom;
+}
+
+.t-origin:hover {
+  /* rotates around bottom-left instead of center */
+  transform: rotate(-15deg);
+}
+
+/* =========================================================
+   8. COMBINED TRANSFORMS
+   ---------------------------------------------------------
+   You can chain multiple transform functions.
+
+   Order MATTERS:
+   transform: A B C;
+
+   They are applied from LEFT to RIGHT.
+
+   Example:
+   transform: translateY(-10px) scale(1.1) rotate(5deg);
+
+   Here:
+   1) move up
+   2) scale up
+   3) rotate slightly
+   ========================================================= */
+
+.t-combo:hover {
+  transform: translateY(-10px) scale(1.1) rotate(5deg);
+}
+
+/* =========================================================
+   9. BASIC 3D TRANSFORM (INTRO)
+   ---------------------------------------------------------
+   For 3D effect you need:
+   1) perspective on PARENT
+   2) 3D transform on CHILD
+
+   Common 3D functions:
+   - translateZ(z)
+   - rotateX(angle)
+   - rotateY(angle)
+   - rotateZ(angle)  (same as 2D rotate)
+
+   NOTE:
+   3D is more advanced; this is just a glimpse.
+   ========================================================= */
+
+/* parent with perspective (how "deep" 3D looks) */
+.t-3d-container {
+  perspective: 600px; /* lower value = stronger 3D effect */
+}
+
+/* child that rotates in 3D */
+.t-3d:hover {
+  transform: rotateY(25deg);
+}
+
+/* =========================================================
+   10. QUICK REVISION SUMMARY
+   ---------------------------------------------------------
+   TRANSFORM FUNCTIONS (2D):
+   - translate(x, y)     -> move
+   - translateX(x)
+   - translateY(y)
+
+   - scale(x, y)         -> resize
+   - scaleX(x)
+   - scaleY(y)
+
+   - rotate(angle)       -> rotate around origin
+
+   - skew(x-angle, y-angle)
+   - skewX(angle)
+   - skewY(angle)
+
+   EXTRA:
+   - transform-origin    -> change pivot point
+   - perspective         -> enable 3D depth on parent
+   - rotateX / rotateY   -> 3D rotation
+
+   IMPORTANT:
+   - transform affects only the element’s drawing,
+     not normal document flow.
+   ========================================================= */

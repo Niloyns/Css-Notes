@@ -1,0 +1,334 @@
+/* =========================================================
+   CSS MEDIA QUERIES – FULL NOTES (TOPIC-WISE)
+   File: media-queries-notes.css
+   Style: Code editor notes → explanation in comments
+   ========================================================= */
+
+/* =========================================================
+   TOPIC 0 – BASE DEMO STYLES (NOT MEDIA QUERY THEORY)
+   ---------------------------------------------------------
+   These styles exist ONLY to visualize media query behavior.
+   They are not part of the media query concept itself.
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  background: #020617;
+  color: #e5e7eb;
+}
+
+section.topic {
+  margin-bottom: 28px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+h1 {
+  margin-bottom: 6px;
+}
+h2 {
+  margin: 18px 0 6px;
+}
+p.desc {
+  margin: 0 0 10px;
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+.demo {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #1f2937;
+  background: #020617;
+}
+
+.box {
+  padding: 14px;
+  border-radius: 8px;
+  background: #1d4ed8;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* =========================================================
+   TOPIC 1 – WHAT IS A MEDIA QUERY?
+   ---------------------------------------------------------
+   Media Queries allow CSS to apply styles based on:
+   - screen size
+   - device type
+   - resolution
+   - orientation
+
+   Used mainly for RESPONSIVE DESIGN.
+   ========================================================= */
+
+/* =========================================================
+   TOPIC 2 – BASIC MEDIA QUERY SYNTAX
+   ---------------------------------------------------------
+   Syntax:
+
+   @media media-type and (condition) {
+     CSS rules here
+   }
+
+   Common media-types:
+   - screen
+   - print
+   - all (default)
+   ========================================================= */
+
+.t2-box {
+  background: #1d4ed8;
+}
+
+/* small screen example */
+@media screen and (max-width: 600px) {
+  .t2-box {
+    background: #ef4444;
+  }
+}
+
+/* =========================================================
+   TOPIC 3 – max-width (MOBILE-FIRST)
+   ---------------------------------------------------------
+   max-width applies styles UP TO a width.
+
+   Common use:
+   - Mobile first design
+   - Start with small screens
+   ========================================================= */
+
+.t3-box {
+  background: #22c55e;
+}
+
+/* applies when screen ≤ 500px */
+@media (max-width: 500px) {
+  .t3-box {
+    background: #f97316;
+  }
+}
+
+/* =========================================================
+   TOPIC 4 – min-width (DESKTOP-FIRST)
+   ---------------------------------------------------------
+   min-width applies styles FROM a width and above.
+
+   Common breakpoints:
+   480px  → phones
+   768px  → tablets
+   1024px → laptops
+   ========================================================= */
+
+.t4-box {
+  background: #0ea5e9;
+}
+
+/* applies when screen ≥ 768px */
+@media (min-width: 768px) {
+  .t4-box {
+    background: #a855f7;
+  }
+}
+
+/* =========================================================
+   TOPIC 5 – COMBINING min-width & max-width
+   ---------------------------------------------------------
+   Used to target a RANGE of screen sizes.
+
+   Example:
+   Tablet only:
+   min-width: 600px AND max-width: 900px
+   ========================================================= */
+
+.t5-box {
+  background: #16a34a;
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+  .t5-box {
+    background: #dc2626;
+  }
+}
+
+/* =========================================================
+   TOPIC 6 – OR CONDITION (comma)
+   ---------------------------------------------------------
+   Comma (,) works like OR.
+
+   Example:
+   Apply styles for:
+   - max-width: 400px OR
+   - min-width: 1200px
+   ========================================================= */
+
+.t6-box {
+  background: #0284c7;
+}
+
+@media (max-width: 400px), (min-width: 1200px) {
+  .t6-box {
+    background: #eab308;
+  }
+}
+
+/* =========================================================
+   TOPIC 7 – ORIENTATION
+   ---------------------------------------------------------
+   orientation detects screen orientation.
+
+   Values:
+   - portrait
+   - landscape
+   ========================================================= */
+
+.t7-box {
+  background: #9333ea;
+}
+
+@media (orientation: landscape) {
+  .t7-box {
+    background: #10b981;
+  }
+}
+
+/* =========================================================
+   TOPIC 8 – DEVICE TYPE (screen vs print)
+   ---------------------------------------------------------
+   Media types:
+   - screen → monitors, phones
+   - print  → printed documents
+   ========================================================= */
+
+.t8-box {
+  background: #3b82f6;
+}
+
+/* when printing */
+@media print {
+  .t8-box {
+    background: white;
+    color: black;
+    border: 2px solid black;
+  }
+}
+
+/* =========================================================
+   TOPIC 9 – HIDE / SHOW ELEMENTS
+   ---------------------------------------------------------
+   Media queries are often used to:
+   - hide content on small screens
+   - show alternate UI
+   ========================================================= */
+
+.t9-hide {
+  display: block;
+}
+
+/* hide on small screens */
+@media (max-width: 500px) {
+  .t9-hide {
+    display: none;
+  }
+}
+
+/* =========================================================
+   TOPIC 10 – RESPONSIVE LAYOUT CHANGE
+   ---------------------------------------------------------
+   Common pattern:
+   - column layout on mobile
+   - row layout on desktop
+   ========================================================= */
+
+.t10-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@media (min-width: 768px) {
+  .t10-layout {
+    flex-direction: row;
+  }
+}
+
+/* =========================================================
+   TOPIC 11 – RESPONSIVE FONT SIZE
+   ---------------------------------------------------------
+   Adjust text size for readability on different screens.
+   ========================================================= */
+
+.t11-text {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  .t11-text {
+    font-size: 18px;
+  }
+}
+
+/* =========================================================
+   TOPIC 12 – RESPONSIVE SPACING
+   ---------------------------------------------------------
+   Change padding/margin across breakpoints.
+   ========================================================= */
+
+.t12-box {
+  padding: 10px;
+}
+
+@media (min-width: 900px) {
+  .t12-box {
+    padding: 24px;
+  }
+}
+
+/* =========================================================
+   TOPIC 13 – MULTIPLE BREAKPOINT STRATEGY
+   ---------------------------------------------------------
+   Mobile-first approach:
+   1. Base styles → mobile
+   2. Add styles as screen grows
+   ========================================================= */
+
+.t13-box {
+  background: #2563eb;
+}
+
+@media (min-width: 600px) {
+  .t13-box {
+    background: #16a34a;
+  }
+}
+
+@media (min-width: 1024px) {
+  .t13-box {
+    background: #dc2626;
+  }
+}
+
+/* =========================================================
+   TOPIC 14 – COMMON BREAKPOINT CHEAT SHEET
+   ---------------------------------------------------------
+   320px  → small phones
+   480px  → phones
+   768px  → tablets
+   1024px → laptops
+   1200px → desktops
+   ========================================================= */
+
+/* =========================================================
+   TOPIC 15 – BEST PRACTICES
+   ---------------------------------------------------------
+   ✔ Prefer mobile-first (min-width)
+   ✔ Avoid too many breakpoints
+   ✔ Use content-based breakpoints
+   ✔ Test on real devices
+   ========================================================= */

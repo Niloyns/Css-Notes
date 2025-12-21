@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- =============================== -->
+    <!-- INTERNAL CSS (Style Tag) -->
+    <!-- =============================== -->
+    <style>
+      /* Descendant Selector Example */
+      div ul li {
+        background-color: cadetblue;
+      }
+
+      /* Element Selector */
+      h2 {
+        color: red;
+      }
+
+      /* ID Selector */
+      #styleTag {
+        background-color: bisque;
+        padding: 10px;
+      }
+
+      /* Class Selector */
+      .item {
+        margin: 5px;
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- =============================== -->
+    <!-- 1. INLINE CSS -->
+    <!-- =============================== -->
+
+    <h1 style="color: blue">Inline CSS Example</h1>
+
+    <!-- =============================== -->
+    <!-- 2. INTERNAL CSS -->
+    <!-- =============================== -->
+
+    <div id="styleTag">
+      <h2>Style Tag (Internal CSS)</h2>
+      <ul>
+        <li class="item">Item 1</li>
+        <li class="item">Item 2</li>
+        <li class="item">Item 3</li>
+        <li class="item">Item 4</li>
+        <li class="item">Item 5</li>
+      </ul>
+    </div>
+
+    <!-- =============================== -->
+    <!-- 3. EXTERNAL CSS -->
+    <!-- =============================== -->
+
+    <section id="externalCss">
+      <h3>External CSS Section</h3>
+      <ol>
+        <li class="ext-item">Item 1</li>
+        <li class="ext-item">Item 2</li>
+        <li class="ext-item">Item 3</li>
+        <li class="ext-item">Item 4</li>
+        <li class="ext-item">Item 5</li>
+      </ol>
+
+      <p>
+        This paragraph is styled using external CSS. External CSS is the best
+        practice because it keeps design separate from HTML structure.
+      </p>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CSS Position Notes Demo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>CSS POSITION – Live Demo</h1>
+
+    <h2>1. Static (default)</h2>
+    <div class="demo-box pos-static">Static Position</div>
+
+    <h2>2. Relative</h2>
+    <div class="demo-box pos-relative">Relative (shifted)</div>
+
+    <h2>3. Absolute inside relative parent</h2>
+    <div class="wrapper">
+      Parent (relative)
+      <div class="demo-box pos-absolute" style="width: 120px; height: 50px">
+        Absolute child
+      </div>
+    </div>
+
+    <h2>4. Fixed</h2>
+    <div class="demo-box pos-fixed" style="width: 100px">Fixed Btn</div>
+
+    <h2>5. Sticky</h2>
+    <p>Scroll down to test sticky →</p>
+    <div class="demo-box pos-sticky" style="background: #4f46e5">
+      Sticky Header
+    </div>
+
+    <div style="height: 600px"></div>
+  </body>
+</html>

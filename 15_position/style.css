@@ -1,0 +1,220 @@
+/* =========================================================
+   CSS POSITION – FULL IMPORTANT NOTES (RIGHT LEARNING ORDER)
+   Code-Editor Style (Perfect for Revision + Interviews)
+   ========================================================= */
+/* Simple demo styling */
+.demo-box {
+  width: 180px;
+  height: 80px;
+  background: #1e293b;
+  border: 2px solid #38bdf8;
+  margin-bottom: 20px;
+  padding: 10px;
+  color: #fff;
+  border-radius: 6px;
+}
+
+.wrapper {
+  width: 250px;
+  height: 150px;
+  background: #0f172a;
+  margin-bottom: 20px;
+  border: 2px dashed #475569;
+  position: relative;
+  padding: 10px;
+  color: #e2e8f0;
+}
+
+body {
+  padding-bottom: 150px;
+}
+
+/* =========================================================
+   0. WHAT IS POSITION?
+   ---------------------------------------------------------
+   position controls HOW an element is placed on the page.
+
+   Available values:
+   1) static      (default)
+   2) relative
+   3) absolute
+   4) fixed
+   5) sticky
+
+   Each behaves differently for layout, scroll, and offsets.
+   ========================================================= */
+
+/* =========================================================
+   1. STATIC (DEFAULT)
+   ---------------------------------------------------------
+   - Normal document flow
+   - top/right/bottom/left DON'T work
+   - No special behavior
+   ========================================================= */
+
+.pos-static {
+  position: static; /* default value */
+  /* top: 20px;  <-- does NOTHING */
+}
+
+/* =========================================================
+   2. RELATIVE
+   ---------------------------------------------------------
+   - Stays in normal document flow
+   - BUT you can move it WITHOUT affecting other elements
+   - top/right/bottom/left WORK, shifting the element visually
+   - Common use: the PARENT for absolute children
+
+   KEY:
+   relative creates a NEW positioning context for ABSOLUTE child.
+   ========================================================= */
+
+.pos-relative {
+  position: relative;
+  top: 10px; /* moves box DOWN 10px */
+  left: 15px; /* moves box RIGHT 15px */
+}
+
+/* =========================================================
+   3. ABSOLUTE
+   ---------------------------------------------------------
+   - Removed from document flow (does NOT take space)
+   - Positions relative to the *nearest positioned ancestor*
+     (relative / absolute / fixed / sticky parent)
+   - If no positioned parent → uses document body
+   - Can overlap other elements
+
+   Very commonly used for:
+   → Tooltips
+   → Badges
+   → Dropdown menus
+   → Overlapping elements
+   ========================================================= */
+
+.wrapper {
+  position: relative; /* parent context */
+}
+
+.pos-absolute {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  /* positioned relative to .wrapper */
+}
+
+/* =========================================================
+   4. FIXED
+   ---------------------------------------------------------
+   - Removed from flow
+   - Always positioned relative to the VIEWPORT
+   - Does NOT move when you scroll
+   - Perfect for:
+     → Sticky navbars
+     → Chat buttons
+     → Floating help btn
+     → Back-to-top buttons
+   ========================================================= */
+
+.pos-fixed {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  /* stays in corner even when scrolling */
+}
+
+/* =========================================================
+   5. STICKY (HYBRID OF RELATIVE + FIXED)
+   ---------------------------------------------------------
+   - Acts like relative until a certain scroll point
+   - When crossed threshold → becomes fixed
+   - Needs:
+     * position: sticky;
+     * top: <value>; (required)
+     * parent must have enough height to scroll
+
+   Example:
+   Sticky header section
+   ========================================================= */
+
+.pos-sticky {
+  position: sticky;
+  top: 0;
+  /* sticks to top when scrolling */
+}
+
+/* =========================================================
+   6. Z-INDEX (STACKING ORDER)
+   ---------------------------------------------------------
+   - Works ONLY on positioned elements
+     (relative, absolute, fixed, sticky)
+   - Higher value appears on top
+   ========================================================= */
+
+.box1 {
+  position: absolute;
+  z-index: 10; /* above lower ones */
+}
+
+.box2 {
+  position: absolute;
+  z-index: 5; /* below box1 */
+}
+
+/* =========================================================
+   7. OFFSET PROPERTIES
+   ---------------------------------------------------------
+   top, right, bottom, left
+
+   - Work only when position ≠ static
+   - Define how far element moves from reference edge
+   ========================================================= */
+
+.offset-demo {
+  position: relative;
+  top: 20px;
+  left: 30px;
+}
+
+/* =========================================================
+   8. COMMON REAL-WORLD PATTERNS
+   ---------------------------------------------------------
+   A) Center absolute element:
+      parent { position: relative; }
+      child {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+   B) Fixed navbar:
+      position: fixed; top: 0; width: 100%;
+
+   C) Badge on icon:
+      wrapper { position: relative; }
+      badge  { position: absolute; top: -4px; right: -4px; }
+
+   D) Sticky sidebar:
+      position: sticky; top: 20px;
+   ========================================================= */
+
+/* =========================================================
+   9. IMPORTANT INTERVIEW NOTES
+   ---------------------------------------------------------
+   ✔ static → normal flow  
+   ✔ relative → normal flow + movable  
+   ✔ absolute → removed from flow + relative to nearest positioned parent  
+   ✔ fixed → relative to viewport, never moves  
+   ✔ sticky → relative UNTIL threshold, then fixed  
+
+   ✔ absolute depends on parent’s positioning context  
+   ✔ sticky REQUIRE top / bottom  
+
+   ✔ z-index only works on positioned elements  
+
+   ✔ relative does NOT affect siblings; absolute does  
+
+   MEMORY TRICK:
+   S → R → A → F → S
+   static → relative → absolute → fixed → sticky
+   ========================================================= */

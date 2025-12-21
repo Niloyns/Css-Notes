@@ -1,0 +1,374 @@
+/* =========================================================
+   CSS GRID – FULL NOTES (20 TOPICS)
+   File: grid-notes.css
+   Code-editor style: comment = explanation, then example code.
+   Each topic is separate and minimal (only relevant code).
+   ========================================================= */
+
+/* =========================================================
+   BASE DEMO STYLES (visuals only — not grid theory)
+   ========================================================= */
+* {
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+body {
+  margin: 0;
+  padding: 20px;
+  background: #020617;
+  color: #e5e7eb;
+}
+h1 {
+  margin-bottom: 6px;
+}
+p.intro {
+  color: #9ca3af;
+  margin: 0 0 16px;
+}
+section.topic {
+  margin-bottom: 22px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+}
+h2 {
+  margin: 12px 0 8px;
+  font-size: 18px;
+}
+p.topic-desc {
+  margin: 0 0 10px;
+  color: #94a3b8;
+  font-size: 13px;
+}
+.demo {
+  background: #05071a;
+  border-radius: 10px;
+  border: 1px solid #1f2937;
+  padding: 10px;
+  min-height: 60px;
+  display: block;
+}
+
+/* helper cells for visual */
+.cell {
+  background: #1d4ed8;
+  color: #fff;
+  padding: 10px;
+  border-radius: 6px;
+  text-align: center;
+  border: 1px solid rgba(15, 23, 42, 0.85);
+}
+.cell.alt {
+  background: #0f766e;
+}
+.cell.small {
+  font-size: 12px;
+  padding: 6px 8px;
+}
+.demo-grid {
+  gap: 10px;
+}
+
+/* =========================================================
+   TOPIC 1 — What is CSS Grid?
+   ---------------------------------------------------------
+   Grid is a 2-dimensional layout system:
+   - Explicit grid: defined with rows/columns
+   - Implicit grid: tracks created automatically
+   Use 'display: grid' or 'display: inline-grid'
+   ========================================================= */
+
+.t1-grid {
+  display: grid;
+}
+
+/* =========================================================
+   TOPIC 2 — grid-template-columns / rows
+   ---------------------------------------------------------
+   Define explicit grid tracks:
+   grid-template-columns: 200px 1fr 100px;
+   grid-template-rows: 100px auto;
+   You can mix units: px, %, fr, auto, minmax().
+   ========================================================= */
+
+.t2-columns {
+  display: grid;
+  grid-template-columns: 150px 1fr 150px;
+  grid-template-rows: 80px;
+}
+
+/* =========================================================
+   TOPIC 3 — fr unit
+   ---------------------------------------------------------
+   'fr' is a fraction of remaining space.
+   1fr 2fr -> second track gets twice the free space of first.
+   ========================================================= */
+
+.t3-fr {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+}
+
+/* =========================================================
+   TOPIC 4 — repeat(), minmax()
+   ---------------------------------------------------------
+   repeat(3, 1fr) shortens repetition.
+   minmax(min, max) gives bounds, e.g. minmax(150px, 1fr).
+   ========================================================= */
+
+.t4-repeat-minmax {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(120px, 1fr));
+}
+
+/* =========================================================
+   TOPIC 5 — auto-fill / auto-fit (with minmax) responsive
+   ---------------------------------------------------------
+   Common pattern:
+   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+   auto-fill fills the row with as many columns as fit.
+   auto-fit collapses empty tracks (useful for centering).
+   ========================================================= */
+
+.t5-autofill {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+}
+
+/* =========================================================
+   TOPIC 6 — gap / row-gap / column-gap
+   ---------------------------------------------------------
+   gap sets both row and column gaps.
+   row-gap and column-gap allow separate control.
+   ========================================================= */
+
+.t6-gap {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  row-gap: 18px;
+}
+
+/* =========================================================
+   TOPIC 7 — grid-auto-rows / grid-auto-columns
+   ---------------------------------------------------------
+   Define size of tracks created implicitly (when content spills).
+   Useful when using auto-placement or many rows generated.
+   ========================================================= */
+
+.t7-auto-rows {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 80px;
+}
+
+/* =========================================================
+   TOPIC 8 — grid-auto-flow
+   ---------------------------------------------------------
+   Controls auto-placement direction:
+   - row (default): fill by row
+   - column: fill by column
+   - dense: attempts to fill holes (useful with items of varying span)
+   Values: 'row', 'column', 'row dense', 'column dense'
+   ========================================================= */
+
+.t8-auto-flow-row {
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-rows: 60px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.t8-auto-flow-column {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 120px;
+  grid-auto-rows: 60px;
+}
+
+/* =========================================================
+   TOPIC 9 — grid-column / grid-row (shorthand placement)
+   ---------------------------------------------------------
+   Place items using start/end line numbers:
+   grid-column: 1 / 3;  (start at line 1, end before line 3)
+   grid-row: 2 / span 2; (span 2 rows)
+   ========================================================= */
+
+.t9-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 60px;
+}
+
+/* example item styles (use in HTML via class on item) */
+
+/* =========================================================
+   TOPIC 10 — grid-area (naming areas) & grid-template-areas
+   ---------------------------------------------------------
+   Create named areas via grid-template-areas and assign items:
+   grid-template-areas:
+     "header header"
+     "sidebar main"
+     "footer footer";
+   Then .header { grid-area: header; }
+   ========================================================= */
+
+.t10-areas {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+}
+
+/* =========================================================
+   TOPIC 11 — justify-items / align-items (items inside cell)
+   ---------------------------------------------------------
+   Aligns content INSIDE each grid cell.
+   justify-items: start | center | end | stretch
+   align-items: start | center | end | stretch
+   ========================================================= */
+
+.t11-items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  align-items: center;
+}
+
+/* =========================================================
+   TOPIC 12 — justify-content / align-content (whole grid)
+   ---------------------------------------------------------
+   Controls alignment of the entire grid within its container
+   when grid is smaller than container.
+
+   justify-content: start | center | end | space-between | space-around | stretch
+   align-content:   same values but vertical
+   ========================================================= */
+
+.t12-content {
+  display: grid;
+  grid-template-columns: repeat(2, 120px);
+  grid-auto-rows: 80px;
+  justify-content: center;
+  align-content: center;
+  height: 260px; /* to show alignment */
+}
+
+/* =========================================================
+   TOPIC 13 — place-items & place-content shorthand
+   ---------------------------------------------------------
+   place-items: align-items justify-items;
+   place-content: align-content justify-content;
+   ========================================================= */
+
+.t13-place {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 200px;
+  place-items: center;
+  place-content: center;
+}
+
+/* =========================================================
+   TOPIC 14 — explicit vs implicit grid
+   ---------------------------------------------------------
+   Explicit grid = tracks created by template.
+   Implicit grid = tracks created by auto-placement (grid-auto-rows/columns).
+   Use explicit for main layout, implicit for overflow content.
+   ========================================================= */
+
+.t14-explicit {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: 80px; /* implicit rows */
+}
+
+/* =========================================================
+   TOPIC 15 — repeat(auto-fit) vs auto-fill demo
+   ---------------------------------------------------------
+   auto-fill fills as many columns as possible (keeps empty tracks),
+   auto-fit collapses empty tracks and allows items to stretch.
+   Use with minmax().
+   ========================================================= */
+
+.t15-auto-fit {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 10px;
+}
+
+/* =========================================================
+   TOPIC 16 — subgrid (brief)
+   ---------------------------------------------------------
+   subgrid lets a child follow parent's track sizing.
+   Example: grid-template-columns: subgrid; (only supported in modern browsers)
+   ========================================================= */
+
+.t16-subgrid-parent {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: auto;
+}
+
+.t16-subgrid-child {
+  display: grid;
+  grid-template-columns: subgrid; /* note: limited browser support */
+}
+
+/* =========================================================
+   TOPIC 17 — layering & z-index in grid
+   ---------------------------------------------------------
+   Grid cells can overlap when items share the same grid area.
+   Use z-index to control stacking order of grid items.
+   ========================================================= */
+
+.t17-overlap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 120px;
+}
+
+/* =========================================================
+   TOPIC 18 — named grid lines
+   ---------------------------------------------------------
+   You can name grid lines in template:
+   grid-template-columns: [left] 200px [content-start] 1fr [right];
+   Then place using line names: grid-column: content-start / right;
+   ========================================================= */
+
+.t18-lines {
+  display: grid;
+  grid-template-columns: [left] 200px [content-start] 1fr [right];
+}
+
+/* =========================================================
+   TOPIC 19 — responsive patterns (media queries)
+   ---------------------------------------------------------
+   Change grid structure per breakpoint:
+   e.g., mobile: 1 column, desktop: 3 columns
+   ========================================================= */
+
+.t19-responsive {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+/* breakpoints handled in HTML demo file with a link to another CSS if needed,
+   but here's a sample media query you can copy into project:
+
+   @media (min-width: 700px) {
+     .t19-responsive { grid-template-columns: repeat(3, 1fr); }
+   }
+*/
+
+/* =========================================================
+   TOPIC 20 — performance & accessibility notes
+   ---------------------------------------------------------
+   - Avoid extremely large grid with many tracks (browser work)
+   - Keep DOM order meaningful; CSS layout shouldn't reorder critical content
+   - Use logical names for grid-template-areas for readability
+   - Test with keyboard navigation & screen readers
+   ========================================================= */

@@ -1,0 +1,92 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: #e5e7eb;
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 25px;
+}
+
+/* =====================================
+   PSEUDO-CLASSES (STATE-BASED)
+===================================== */
+
+/* 1. :hover - when mouse is over */
+.btn-hover:hover {
+  background: #38bdf8;
+  color: rgb(174, 9, 9);
+}
+
+/* 2. :active - when clicked */
+.btn-active:active {
+  background: #22c55e;
+  transform: scale(0.95);
+}
+
+/* 3. :checked - when checkbox checked */
+.input-checked:checked + label {
+  outline: 2px solid #facc15;
+  color: #f97316;
+  font-weight: bold;
+}
+
+/* 3. :focus - when input selected */
+.input-focus:focus {
+  outline: 2px solid #facc15;
+}
+
+/* 4. :visited - after link clicked */
+.link-visited:visited {
+  color: purple;
+}
+
+/* 5. :first-child - first element only */
+.first-child-demo p:first-child {
+  color: red;
+}
+
+/* 6. :last-child - last element only */
+.last-child-demo p:last-child {
+  color: green;
+}
+
+/* 7. :nth-child(n) - specific index */
+.nth-demo li:nth-child(2n) {
+  color: yellow;
+}
+
+/* =====================================
+   PSEUDO-ELEMENTS (PART OF ELEMENT)
+===================================== */
+
+/* 8. ::before - adds content before */
+.before-demo::before {
+  content: "👉 ";
+  color: orange;
+}
+
+/* 9. ::after - adds content after */
+.after-demo::after {
+  content: " ✔";
+  color: lime;
+}
+
+/* 10. ::first-letter */
+.first-letter-demo::first-letter {
+  font-size: 30px;
+  color: #38bdf8;
+}
+
+/* 11. ::first-line */
+.first-line-demo::first-line {
+  color: #f97316;
+  font-weight: bold;
+}
+
+/* 12. ::selection - selected text */
+.selection-demo::selection {
+  background: yellow;
+  color: black;
+}

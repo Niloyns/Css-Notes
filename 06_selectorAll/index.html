@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Selectors Notes</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>CSS Selectors - Important Notes & Examples</h1>
+
+    <section>
+      <h2>1. Universal Selector (*)</h2>
+      <p>Applies style to ALL elements.</p>
+    </section>
+
+    <section>
+      <h2>2. Element Selector</h2>
+      <p>This paragraph is styled using element selector.</p>
+    </section>
+
+    <section>
+      <h2>3. Class Selector (.class)</h2>
+      <p class="highlight">Styled using class selector</p>
+    </section>
+
+    <section>
+      <h2>4. ID Selector (#id)</h2>
+      <p id="unique">Styled using ID selector</p>
+    </section>
+
+    <section>
+      <h2>5. Group Selector</h2>
+      <h3>Heading Three</h3>
+      <h4>Heading Four</h4>
+    </section>
+
+    <section>
+      <h2>6. Descendant Selector (space)</h2>
+      <div class="box">
+        <p>Paragraph inside div</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>7. Child Selector (>)</h2>
+      <div class="parent">
+        <p>Direct child</p>
+        <span>
+          <p>Not direct child</p>
+        </span>
+      </div>
+    </section>
+
+    <section>
+      <h2>8. Adjacent Sibling (+)</h2>
+      <h5>Heading 5</h5>
+      <p>Styled paragraph</p>
+    </section>
+
+    <section>
+      <h2>9. General Sibling (~)</h2>
+      <h6>Heading 6</h6>
+      <p>First sibling</p>
+      <p>Second sibling</p>
+    </section>
+
+    <section>
+      <h2>10. Attribute Selector</h2>
+      <input type="text" placeholder="Text input" />
+      <input type="password" placeholder="Password input" />
+    </section>
+
+    <section>
+      <h2>11. Pseudo-class (:hover)</h2>
+      <button class="btn">Hover Me</button>
+    </section>
+
+    <section>
+      <h2>12. Pseudo-element (::before)</h2>
+      <p class="before-text">Text with before</p>
+    </section>
+  </body>
+</html>

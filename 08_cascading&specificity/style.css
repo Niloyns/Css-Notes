@@ -1,0 +1,302 @@
+/* =========================================================
+   CSS CASCADING & SPECIFICITY – FULL NOTES (CODE EDITOR STYLE)
+   Put this in: cascade-specificity-notes.css
+   ========================================================= */
+
+/* =========================================================
+   0. BASIC DEMO STYLES (for visualization only)
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  background: #020617;
+  color: #e5e7eb;
+}
+
+.demo-box {
+  margin-bottom: 12px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #1f2937;
+}
+
+/* =========================================================
+   1. WHAT IS CASCADING?
+   ---------------------------------------------------------
+   When multiple CSS rules target the SAME element,
+   the browser must decide "which one wins".
+
+   Cascade decision order:
+   1) Importance   → !important
+   2) Specificity  → how strong the selector is
+   3) Source order → last rule in CSS wins
+   ========================================================= */
+
+/* =========================================================
+   2. SOURCE ORDER (LAST RULE WINS)
+   ---------------------------------------------------------
+   If two rules have the SAME selector (same specificity),
+   the one written later in the file will be applied.
+
+   Example: both rules target .order-demo
+   ========================================================= */
+
+.order-demo {
+  /* first rule (weaker by order) */
+  color: red;
+}
+
+.order-demo {
+  /* second rule (written later, wins) */
+  color: lime;
+}
+
+/* =========================================================
+   3. SPECIFICITY – BASIC IDEA
+   ---------------------------------------------------------
+   Specificity = "strength" of a selector.
+
+   General priority (from strongest to weakest):
+   1) Inline style         → style="..."
+   2) ID selector          → #id
+   3) Class / attribute /
+      pseudo-class         → .class, [type="text"], :hover
+   4) Element selector     → p, h1, div
+
+   If two rules conflict, the one with HIGHER specificity wins.
+   ========================================================= */
+
+/* =========================================================
+   4. SPECIFICITY VALUE SYSTEM (MENTAL MODEL)
+   ---------------------------------------------------------
+   Think like a 4-digit number: (a, b, c, d)
+
+   a = inline styles         (1000)
+   b = ID selectors          (0100)
+   c = classes, attributes,
+       pseudo-classes        (0010)
+   d = elements, pseudo-elements (0001)
+
+   Example specificities:
+   p             → 0001
+   .note         → 0010
+   #main         → 0100
+   div.note      → 0011   (div = 1, .note = 10 → total 11)
+   #main .note   → 0110   (#main = 100, .note = 10 → total 110)
+   ========================================================= */
+
+/* =========================================================
+   5. SPECIFICITY EXAMPLE – ELEMENT vs CLASS vs ID
+   ---------------------------------------------------------
+   All three rules below can target:
+   <p id="sp-note" class="note-demo">...</p>
+
+   Final color:
+   - element selector: p           → weakest
+   - class selector:   .note-demo  → stronger
+   - ID selector:      #sp-note    → strongest
+   ========================================================= */
+
+/* Element selector → lowest specificity */
+p {
+  color: #38bdf8; /* cyan */
+}
+
+/* Class selector → stronger than element */
+.note-demo {
+  color: #eab308; /* yellow */
+}
+
+/* ID selector → stronger than class & element */
+#sp-note {
+  color: #22c55e; /* green wins */
+}
+
+/* =========================================================
+   6. COMBINED SELECTORS INCREASE SPECIFICITY
+   ---------------------------------------------------------
+   When you combine selectors, you ADD their specificity.
+
+   Example element:
+   <div class="card">
+     <p class="title">Hello</p>
+   </div>
+
+   Specificity order (weak → strong):
+   p              (element only)
+   .title         (class only)
+   .card .title   (two classes)
+   #main .title   (ID + class)
+   ========================================================= */
+
+/* element selector */
+p {
+  /* already defined above (cyan) */
+  color: #3b82f6; /* blue */
+}
+
+/* class selector */
+.title {
+  color: #f97316; /* orange */
+}
+
+/* descendant with two classes (.card .title) → more specific */
+.card .title {
+  color: #a855f7; /* purple (wins over .title) */
+}
+
+/* =========================================================
+   7. !IMPORTANT – OVERRIDES SPECIFICITY
+   ---------------------------------------------------------
+   !important makes a rule the highest priority
+   (except if another !important with higher specificity exists).
+
+   USE VERY CAREFULLY – it can make CSS hard to maintain.
+   ========================================================= */
+
+.important-demo {
+  color: red;
+}
+
+/* even though this comes later, without !important it would just
+   follow normal cascade rules. Here we add !important to force it. */
+.important-demo {
+  color: #22c55e !important; /* green wins because of !important */
+}
+
+/* this will NOT override the previous one */
+.important-demo {
+  color: blue; /* ignored because previous rule uses !important */
+}
+
+/* =========================================================
+   8. INLINE STYLE vs EXTERNAL CSS
+   ---------------------------------------------------------
+   Specificity order including inline:
+
+   1) !important (in inline or external)
+   2) Inline styles (style="...")  → (1000)
+   3) External / internal CSS (ID, class, element)
+
+   Example element:
+   <p class="inline-test" style="color: orange;">...</p>
+
+   Final color:
+   - .inline-test in CSS → loses
+   - style="color: orange" (INLINE) → wins
+   ========================================================= */
+
+.inline-test {
+  color: #0ea5e9; /* will lose against inline style="color: orange" */
+}
+
+/* To override even inline style, you need !important in CSS:
+.inline-test {
+  color: red !important;
+}
+*/
+
+/* =========================================================
+   9. INHERITANCE
+   ---------------------------------------------------------
+   Some properties are inherited from parent to children automatically.
+
+   Common INHERITED properties:
+   - color
+   - font-family
+   - font-size
+   - line-height
+
+   Non-inherited (need to be set for each element if needed):
+   - margin, padding
+   - border
+   - background
+   - width, height
+
+   You can force inheritance:
+   color: inherit;
+   font-size: inherit;
+   ========================================================= */
+
+/* Parent sets color, children will inherit color by default */
+
+.parent-text {
+  color: #22c55e; /* green */
+}
+
+.parent-text p {
+  /* color not specified → inherits green from .parent-text */
+  font-size: 18px;
+}
+
+/* =========================================================
+   10. CASCADE DECISION FLOW (SUMMARY)
+   ---------------------------------------------------------
+   When multiple rules conflict, browser decides like this:
+
+   STEP 1: Check !important
+           - if one rule has !important and others don't,
+             that rule wins.
+
+   STEP 2: If multiple rules have same importance level,
+           compare SPECIFICITY.
+           - higher specificity wins.
+
+   STEP 3: If specificity is also equal,
+           the rule written LAST in the CSS file wins
+           (source order).
+   ========================================================= */
+
+/* =========================================================
+   11. PRACTICAL FULL EXAMPLE
+   ---------------------------------------------------------
+   HTML (example):
+   <p id="demo" class="msg special" style="color: orange;">
+     Cascading & Specificity
+   </p>
+
+   CSS rules below show who wins:
+   ========================================================= */
+
+/* element selector → lowest */
+p {
+  color: #3b82f6; /* blue */
+}
+
+/* class selector (.msg) */
+.msg {
+  color: #facc15; /* yellow */
+}
+
+/* more specific class selector (.special.msg) */
+.special.msg {
+  color: #f97316; /* orange-ish */
+}
+
+/* ID selector (#demo) → beats all class + element */
+#demo {
+  color: #22c55e; /* green */
+}
+
+/* class with !important → beats ID without !important */
+.override {
+  color: red !important;
+}
+
+/* If element has:
+   <p id="demo" class="msg special override" style="color: orange;">
+   Final color steps:
+
+   1) Inline color: orange  → beats p, .msg, .special.msg, #demo
+   2) .override { color: red !important; }
+      → !important beats inline style
+
+   Final color = RED
+   ========================================================= */

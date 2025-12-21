@@ -1,0 +1,103 @@
+/* =========================================================
+   INLINE vs BLOCK ELEMENTS - FULL STUDY NOTES
+   ========================================================= */
+
+/* =========================================================
+   1. BLOCK ELEMENTS
+   ---------------------------------------------------------
+   Characteristics:
+   - Always start on a NEW LINE
+   - Take FULL WIDTH of parent
+   - Respect width and height
+   - Allow margin & padding on all sides
+
+   Examples:
+   div, p, h1-h6, section, article, ul, li
+   ========================================================= */
+
+.block-demo {
+  background: #1e293b;
+  color: #e5e7eb;
+  border: 2px solid #38bdf8;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+/* =========================================================
+   2. INLINE ELEMENTS
+   ---------------------------------------------------------
+   Characteristics:
+   - Do NOT start a new line
+   - Take only required width
+   - width & height DO NOT WORK
+   - Vertical margin & padding have limited effect
+
+   Examples:
+   span, a, strong, em, i, b
+   ========================================================= */
+
+.inline-demo {
+  background: #334155;
+  color: #f97316;
+  border: 2px solid #f97316;
+  padding: 5px;
+}
+
+/* =========================================================
+   3. INLINE → BLOCK
+   ---------------------------------------------------------
+   Using display: block
+   Makes inline behave like block
+   ========================================================= */
+
+.inline-to-block {
+  display: block;
+  background: #166534;
+  color: white;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+/* =========================================================
+   4. BLOCK → INLINE
+   ---------------------------------------------------------
+   Using display: inline
+   Makes block behave like inline
+   ========================================================= */
+
+.block-to-inline {
+  display: inline;
+  background: #7c2d12;
+  color: white;
+  padding: 10px;
+}
+
+/* =========================================================
+   5. INLINE-BLOCK
+   ---------------------------------------------------------
+   Best of both worlds:
+   - Stays in same line (like inline)
+   - Respects width & height (like block)
+   ========================================================= */
+
+.inline-block-demo {
+  display: inline-block;
+  width: 120px;
+  height: 60px;
+  background: #312e81;
+  color: white;
+  text-align: center;
+  line-height: 60px;
+  margin: 5px;
+}
+
+/* =========================================================
+   VISUAL BACKGROUND
+   ========================================================= */
+
+body {
+  background: #020617;
+  font-family: system-ui, sans-serif;
+  color: #e5e7eb;
+  padding: 20px;
+}

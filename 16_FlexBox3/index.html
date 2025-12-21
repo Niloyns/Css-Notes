@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CSS Flexbox – 20 Topic Demo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>CSS Flexbox – 20 Topics Demo</h1>
+    <p class="intro">
+      Each section = same topic number as in flex-notes.css. Resize the window
+      to observe behavior.
+    </p>
+
+    <!-- TOPIC 1 -->
+    <section class="topic">
+      <h2>Topic 1 – Flex Container (display: flex / inline-flex)</h2>
+      <p class="topic-desc">
+        Parent becomes flex container, children become flex items.
+      </p>
+
+      <div class="demo-row t1-flex-block">
+        <div class="box">Item 1</div>
+        <div class="box">Item 2</div>
+        <div class="box">Item 3</div>
+      </div>
+    </section>
+
+    <!-- TOPIC 2 -->
+    <section class="topic">
+      <h2>Topic 2 – flex-direction</h2>
+      <p class="topic-desc">Row vs column main axis.</p>
+
+      <div class="demo-row t2-row">
+        <div class="box">Row A</div>
+        <div class="box">Row B</div>
+        <div class="box">Row C</div>
+      </div>
+
+      <div class="demo-row t2-column">
+        <div class="box">Col 1</div>
+        <div class="box">Col 2</div>
+        <div class="box">Col 3</div>
+      </div>
+    </section>
+
+    <!-- TOPIC 3 -->
+    <section class="topic">
+      <h2>Topic 3 – flex-wrap</h2>
+      <p class="topic-desc">
+        wrap will move items to next line when space is small.
+      </p>
+
+      <div class="demo-row t3-wrap">
+        <div class="box small">1</div>
+        <div class="box small">2</div>
+        <div class="box small">3</div>
+        <div class="box small">4</div>
+        <div class="box small">5</div>
+        <div class="box small">6</div>
+      </div>
+    </section>
+
+    <!-- TOPIC 4 -->
+    <section class="topic">
+      <h2>Topic 4 – flex-flow</h2>
+      <p class="topic-desc">Shorthand: flex-direction + flex-wrap.</p>
+
+      <div class="demo-row t4-flow-row-wrap">
+        <div class="box small">A</div>
+        <div class="box small">B</div>
+        <div class="box small">C</div>
+        <div class="box small">D</div>
+        <div class="box small">E</div>
+      </div>
+    </section>
+
+    <!-- TOPIC 5 -->
+    <section class="topic">
+      <h2>Topic 5 – gap</h2>
+      <p class="topic-desc">Gap adds space between items.</p>
+
+      <div class="demo-row t5-gap-small">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+      </div>
+
+      <div class="demo-row t5-gap-large">
+        <div class="box">A</div>
+        <div class="box">B</div>
+        <div class="box">C</div>
+      </div>
+    </section>
+
+    <!-- TOPIC 6 -->
+    <section class="topic">
+      <h2>Topic 6 – justify-content (main axis)</h2>
+      <p class="topic-desc">
+        All important values: start, center, end, space-*
+      </p>
+
+      <p class="topic-desc">flex-start</p>
+      <div class="demo-row t6-justify-start">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+      </div>
+
+      <p class="topic-desc">center</p>
+      <div class="demo-row t6-justify-center">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+      </div>
+
+      <p class="topic-desc">flex-end</p>
+      <div class="demo-row t6-justify-end">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+      </div>
+
+      <p class="topic-desc">space-between</p>
+      <div class="demo-row t6-justify-between">
+        <div class="box">L</div>
+        <div class="box">M</div>
+        <div class="box">R</div>
+      </div>
+
+      <p class="topic-desc">space-around</p>
+      <div class="demo-row t6-justify-around">
+        <div class="box">X</div>
+        <div class="box">Y</div>
+        <div class="box">Z</div>
+      </div>
+
+      <p class="topic-desc">space-evenly</p>
+      <div class="demo-row t6-justify-evenly">
+        <div class="box">A</div>
+        <div class="box">B</div>
+        <div class="box">C</div>
+      </div>
+    </section>
+
+    <!-- TOPIC 7 -->
+    <section class="topic">
+      <h2>Topic 7 – align-items (cross axis)</h2>
+      <p class="topic-desc">Align items vertically (for row direction).</p>
+
+      <div class="demo-row t7-align-start tall">
+        <div class="box small">Short</div>
+        <div class="box big">Tall</div>
+        <div class="box small">Short</div>
+      </div>
+
+      <div class="demo-row t7-align-center tall">
+        <div class="box small">Short</div>
+        <div class="box big">Tall</div>
+        <div class="box small">Short</div>
+      </div>
+
+      <div class="demo-row t7-align-end tall">
+        <div class="box small">Short</div>
+        <div class="box big">Tall</div>
+        <div class="box small">Short</div>
+      </div>
+    </section>
+
+    <!-- TOPIC 8 -->
+    <section class="topic">
+      <h2>Topic 8 – align-content (multi-line)</h2>
+      <p class="topic-desc">Align rows vertically when items wrap.</p>
+
+      <p class="topic-desc">center</p>
+      <div class="demo-row t8-align-center multi">
+        <div class="box small">1</div>
+        <div class="box small">2</div>
+        <div class="box small">3</div>
+        <div class="box small">4</div>
+        <div class="box small">5</div>
+        <div class="box small">6</div>
+        <div class="box small">7</div>
+        <div class="box small">8</div>
+      </div>
+
+      <p class="topic-desc">space-between</p>
+      <div class="demo-row t8-align-space-between multi">
+        <div class="box small">1</div>
+        <div class="box small">2</div>
+        <div class="box small">3</div>
+        <div class="box small">4</div>
+        <div class="box small">5</div>
+        <div class="box small">6</div>
+        <div class="box small">7</div>
+        <div class="box small">8</div>
+      </div>
+    </section>
+
+    <!-- TOPIC 9 -->
+    <section class="topic">
+      <h2>Topic 9 – flex-basis</h2>
+      <p class="topic-desc">Initial width of each item along main axis.</p>
+
+      <div class="demo-row t9-container">
+        <div class="box t9-basis-100">100px</div>
+        <div class="box t9-basis-200">200px</div>
+        <div class="box t9-basis-100">100px</div>
+      </div>
+    </section>
+
+    <!-- TOPIC 10 -->
+    <section class="topic">
+      <h2>Topic 10 – flex-grow</h2>
+      <p class="topic-desc">How much items grow for extra space.</p>
+
+      <div class="demo-row t10-container">
+        <div class="box t10-grow-0">grow:0</div>
+        <div class="box alt t10-grow-1">grow:1</div>
+        <div class="box t10-grow-2">grow:2</div>
+      </div>
+    </section>
+
+    <!-- TOPIC 11 -->
+    <section class="topic">
+      <h2>Topic 11 – flex-shrink</h2>
+      <p class="topic-desc">How much items shrink when space is too small.</p>
+
+      <div class="demo-row t11-container">
+        <div class="box t11-no-shrink">no-shrink</div>
+        <div class="box t11-default-shrink">shrink:1</div>
+        <div class="box t11-default-shrink">shrink:1</div>
+      </div>
+    </section>
+
+    <!-- TOPIC 12 -->
+    <section class="topic">
+      <h2>Topic 12 – flex shorthand</h2>
+      <p class="topic-desc">flex: grow shrink basis;</p>
+
+      <div class="demo-row t12-container">
+        <div class="box t12-flex-1">flex:1</div>
+        <div class="box t12-flex-auto">flex:0 1 auto</div>
+        <div class="box t12-flex-custom">flex:2 1 150px</div>
+      </div>
+    </section>
+
+    <!-- TOPIC 13 -->
+    <section class="topic">
+      <h2>Topic 13 – align-self + baseline</h2>
+      <p class="topic-desc">
+        align-self overrides align-items for single item.
+      </p>
+
+      <div class="demo-row t13-align-self-container">
+        <div class="box t13-self-start">top</div>
+        <div class="box t13-self-center">center</div>
+        <div class="box t13-self-end">bottom</div>
+      </div>
+
+      <p class="topic-desc">align-items: baseline example.</p>
+      <div class="demo-row t13-baseline-container">
+        <div class="box small-text">small</div>
+        <div class="box big-text">BIG</div>
+        <div class="box mid-text">mid</div>
+      </div>
+    </section>
+
+    <!-- TOPIC 14 -->
+    <section class="topic">
+      <h2>Topic 14 – order</h2>
+      <p class="topic-desc">Visual order different from DOM order.</p>
+
+      <div class="demo-row t14-container">
+        <div class="box">1</div>
+        <div class="box t14-order-last">2 (order 2)</div>
+        <div class="box t14-order-first">3 (order -1)</div>
+      </div>
+    </section>
+
+    <!-- TOPIC 15 -->
+    <section class="topic">
+      <h2>Topic 15 – Centering with Flexbox</h2>
+      <p class="topic-desc">Center both horizontally and vertically.</p>
+
+      <div class="demo-row t15-center-container tall">
+        <div class="box">Centered</div>
+      </div>
+    </section>
+
+    <!-- TOPIC 16 -->
+    <section class="topic">
+      <h2>Topic 16 – Navbar layout</h2>
+      <p class="topic-desc">Logo left, links center, actions right.</p>
+
+      <header class="t16-navbar">
+        <div class="t16-nav-left">
+          <div class="box small">Logo</div>
+        </div>
+
+        <nav class="t16-nav-center">
+          <div class="box small">Home</div>
+          <div class="box small">About</div>
+          <div class="box small">Contact</div>
+        </nav>
+
+        <div class="t16-nav-right">
+          <div class="box small">Login</div>
+          <div class="box small alt">Sign up</div>
+        </div>
+      </header>
+    </section>
+
+    <!-- TOPIC 17 -->
+    <section class="topic">
+      <h2>Topic 17 – Responsive card row</h2>
+      <p class="topic-desc">Cards that wrap and resize.</p>
+
+      <div class="demo-row t17-card-row">
+        <div class="box t17-card">Card 1</div>
+        <div class="box alt t17-card">Card 2</div>
+        <div class="box t17-card">Card 3</div>
+        <div class="box alt t17-card">Card 4</div>
+      </div>
+    </section>
+
+    <!-- TOPIC 18 -->
+    <section class="topic">
+      <h2>Topic 18 – Sidebar + main layout</h2>
+      <p class="topic-desc">Fixed-width sidebar, flexible main.</p>
+
+      <div class="demo-row t18-layout">
+        <div class="box t18-sidebar">Sidebar</div>
+        <div class="box alt t18-main">Main content area grows</div>
+      </div>
+    </section>
+
+    <!-- TOPIC 19 -->
+    <section class="topic">
+      <h2>Topic 19 – Column layout (mobile first)</h2>
+      <p class="topic-desc">Stack items as column.</p>
+
+      <div class="demo-row t19-column-layout">
+        <div class="box">Header</div>
+        <div class="box alt">Content</div>
+        <div class="box">Footer</div>
+      </div>
+    </section>
+
+    <!-- TOPIC 20 -->
+    <section class="topic">
+      <h2>Topic 20 – Summary (no extra CSS)</h2>
+      <p class="topic-desc">
+        Use this page + flex-notes.css as your flexbox cheat sheet.
+      </p>
+    </section>
+  </body>
+</html>

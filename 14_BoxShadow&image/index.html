@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Box-Shadow & Background-Image Notes</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div>
+          <h1>Box-Shadow & Background-Image — Notes & Live Examples</h1>
+          <p class="lead">
+            Right-order notes in code-editor style. Hover cards where
+            applicable. Use these examples as a copyable cheat-sheet.
+          </p>
+        </div>
+      </div>
+
+      <!-- PART A: Box-shadow -->
+      <h2 class="section-title">A — Box-shadow (basics → advanced)</h2>
+      <div class="row">
+        <div class="card shadow-basic">
+          <span class="label">Basic shadow</span>
+          <div>box-shadow: 4px 8px 20px rgba(...)</div>
+          <span class="small">Soft, outward drop shadow</span>
+        </div>
+
+        <div class="card shadow-offset">
+          <span class="label">Negative offsets</span>
+          <div>box-shadow: -6px -6px 18px rgba(...)</div>
+          <span class="small">Shadow moves top-left</span>
+        </div>
+
+        <div class="card shadow-hard">
+          <span class="label">Hard edge shadow</span>
+          <div>box-shadow: 6px 6px 0 rgba(...)</div>
+          <span class="small">No blur = sharp edge</span>
+        </div>
+
+        <div class="card shadow-soft">
+          <span class="label">Soft blur</span>
+          <div>box-shadow: 6px 6px 30px rgba(...)</div>
+          <span class="small">Large blur radius</span>
+        </div>
+
+        <div class="card shadow-spread">
+          <span class="label">Spread radius</span>
+          <div>box-shadow: 6px 8px 20px 6px rgba(...)</div>
+          <span class="small">Positive spread expands shadow</span>
+        </div>
+
+        <div class="card shadow-inset">
+          <span class="label">Inset shadow</span>
+          <div>box-shadow: inset 0 6px 18px rgba(...)</div>
+          <span class="small">Inner shadow (depth inside)</span>
+        </div>
+
+        <div class="card shadow-multi">
+          <span class="label">Multiple layered shadows</span>
+          <div>box-shadow: inset..., 0 8px 20px..., 0 20px 40px...</div>
+          <span class="small">Layered depth & highlight</span>
+        </div>
+
+        <div class="card shadow-hover">
+          <span class="label">Hover animated shadow</span>
+          <div>Transitioned box-shadow on :hover</div>
+          <span class="small">Smooth elevation effect</span>
+        </div>
+      </div>
+
+      <!-- PART B: Background-image -->
+      <h2 class="section-title" style="margin-top: 28px">
+        B — Background-image (basics → advanced)
+      </h2>
+      <div class="row" style="align-items: flex-start">
+        <div class="card bg-basic bg-cover">
+          <span class="label">Basic background-image (cover)</span>
+          <div style="margin-top: 8px; font-size: 13px">
+            background-size: cover; background-position:center;
+          </div>
+          <span class="credit">Image: Unsplash</span>
+        </div>
+
+        <div
+          class="card bg-contain"
+          style="
+            background-image: url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=400&q=60');
+          "
+        >
+          <span class="label">Contain (no crop)</span>
+          <div style="margin-top: 8px; font-size: 13px">
+            background-size: contain; shows full image
+          </div>
+          <span class="credit">Useful for logos</span>
+        </div>
+
+        <div class="card bg-pos bg-cover">
+          <span class="label">Background position</span>
+          <div style="margin-top: 8px; font-size: 13px">
+            background-position: top right
+          </div>
+        </div>
+
+        <div
+          class="card bg-repeat"
+          style="
+            background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+            background-color: #0b1220;
+          "
+        >
+          <span class="label">Repeat patterns</span>
+          <div style="margin-top: 8px; font-size: 13px">
+            background-repeat: repeat
+          </div>
+        </div>
+
+        <div class="card bg-attachment bg-multiple">
+          <span class="label">Fixed + Multiple backgrounds</span>
+          <div style="margin-top: 8px; font-size: 13px">
+            Layer gradient + image + blend-mode
+          </div>
+          <span class="small">Use with care on mobile</span>
+        </div>
+
+        <div class="card bg-gradient">
+          <span class="label">Gradient background</span>
+          <div style="margin-top: 8px; font-size: 13px">
+            linear-gradient(...) as image
+          </div>
+        </div>
+
+        <div class="card bg-blend">
+          <span class="label">Blend mode</span>
+          <div style="margin-top: 8px; font-size: 13px">
+            background-blend-mode: multiply
+          </div>
+          <span class="small">Colors mix with image</span>
+        </div>
+      </div>
+
+      <h2 class="section-title" style="margin-top: 28px">
+        C — Overlay technique & accessibility
+      </h2>
+      <div style="display: flex; gap: 20px; flex-wrap: wrap">
+        <!-- example: image card with pseudo-element overlay (inlined here for demo) -->
+        <div
+          class="card"
+          style="
+            position: relative;
+            overflow: hidden;
+            width: 420px;
+            min-height: 180px;
+            background-image: url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1200&q=60');
+            background-size: cover;
+            background-position: center;
+          "
+        >
+          <div
+            style="
+              position: absolute;
+              inset: 0;
+              background: linear-gradient(
+                180deg,
+                rgba(2, 6, 23, 0.35),
+                rgba(2, 6, 23, 0.6)
+              );
+            "
+          ></div>
+          <div style="position: relative; z-index: 2">
+            <span class="label">Overlay example</span>
+            <div style="font-weight: 700; font-size: 18px; margin-top: 6px">
+              Text remains readable thanks to overlay
+            </div>
+            <span class="small">Use overlays for contrast</span>
+          </div>
+        </div>
+
+        <div class="card" style="width: 300px">
+          <span class="label">Accessibility notes</span>
+          <div style="margin-top: 8px; color: #b8c7da; font-size: 13px">
+            - Provide background-color fallback<br />
+            - Use overlays or text-shadow for contrast<br />
+            - Avoid small text over busy images<br />
+            - Test with color-blind & low-vision tools
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+/* ================================ */
+/* EXTERNAL CSS NOTES */
+/* ================================ */
+
+#externalCss {
+  background-color: bisque;
+  padding: 15px;
+}
+
+h3 {
+  color: violet;
+}
+
+ol {
+  background-color: goldenrod;
+  padding: 10px;
+}
+
+ol li {
+  background-color: rgb(123, 142, 237);
+  margin: 5px;
+  padding: 5px;
+}
+
+p {
+  color: lawngreen;
+  line-height: 1.6;
+}
+
+/* ================================ */
+/* IMPORTANT LEARNING POINTS */
+/* ================================ */
+
+/*
+INLINE CSS:
+- Written inside HTML tag
+- Lowest reuse
+- Not recommended
+
+
+INTERNAL CSS:
+- Written inside <style> tag in head
+- Good for small pages
+
+
+EXTERNAL CSS:
+- Written in separate .css file
+- Best practice
+- Reusable & maintainable
+
+
+SELECTORS USED:
+- Element Selector: h2, p, ol
+- Class Selector: .item, .ext-item
+- ID Selector: #styleTag, #externalCss
+- Descendant Selector: div ul li
+*/

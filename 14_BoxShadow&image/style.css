@@ -1,0 +1,298 @@
+/* =========================================================
+   BOX-SHADOW & BACKGROUND-IMAGE – FULL NOTES (RIGHT ORDER)
+   Code-editor style: explanations + live examples
+   Save as: style.css
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   0. BASIC PAGE STYLE (visual layout for demos)
+   --------------------------------------------------------- */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: #6498ff;
+  color: #000000;
+}
+.container {
+  max-width: 1100px;
+  margin: 28px auto;
+  padding: 20px;
+}
+h1 {
+  margin: 0 0 8px;
+  font-size: 22px;
+}
+p.lead {
+  margin: 0 0 18px;
+  color: #9fb0c8;
+}
+
+/* Simple demo row */
+.row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+.card {
+  width: 300px;
+  min-height: 140px;
+  border-radius: 12px;
+  padding: 16px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.01)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+/* extra inline styles for layout clarity (keeps everything in one place) */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.intro {
+  max-width: 760px;
+}
+.section-title {
+  margin: 16px 0 8px;
+  color: #f6ff00;
+  font-size: 16px;
+}
+/* small helper to show image credits in cards */
+.card .credit {
+  font-size: 11px;
+  color: #7f8fa6;
+  margin-top: 8px;
+  display: block;
+}
+
+/* Visual label for code examples */
+.label {
+  font-size: 12px;
+  color: #ff3d03;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* =========================================================
+   PART A: BOX-SHADOW (Right learning order)
+   ========================================================= */
+
+/* 1. Basic syntax
+   ---------------------------------------------------------
+   box-shadow: offset-x offset-y blur-radius spread-radius color;
+   - offset-x, offset-y (required) : how far the shadow moves
+   - blur-radius (optional)         : blur amount (0 = sharp)
+   - spread-radius (optional)       : increases or decreases shadow size
+   - color (optional)               : color with alpha recommended
+   Example:
+   box-shadow: 4px 6px 10px rgba(0,0,0,0.5);
+*/
+.shadow-basic {
+  /* small soft shadow below the box */
+  box-shadow: 4px 8px 20px rgba(2, 6, 23, 0.65);
+}
+
+/* 2. Offsets: control position of shadow
+   ---------------------------------------------------------
+   Positive x => right, Positive y => down
+   Negative values move shadow left / up
+*/
+.shadow-offset {
+  box-shadow: -6px -6px 18px rgba(3, 10, 25, 0.5);
+}
+
+/* 3. Blur radius: softens shadow edges
+   ---------------------------------------------------------
+   blur = 0 => hard shadow edge
+   larger blur => softer, more spread out shadow
+*/
+.shadow-hard {
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.6); /* sharp edge */
+}
+.shadow-soft {
+  box-shadow: 6px 6px 30px rgba(2, 6, 23, 0.6); /* very soft */
+}
+
+/* 4. Spread radius: grows or shrinks shadow size
+   ---------------------------------------------------------
+   positive spread => grows shadow
+   negative spread => shrinks shadow
+   Syntax: box-shadow: x y blur spread color;
+*/
+.shadow-spread {
+  box-shadow: 6px 8px 20px 6px rgba(2, 10, 36, 0.55); /* larger footprint */
+}
+.shadow-spread-neg {
+  box-shadow: 6px 8px 20px -6px rgba(2, 10, 36, 0.55); /* tighter shadow */
+}
+
+/* 5. inset shadow: shadow inside the box
+   ---------------------------------------------------------
+   Use 'inset' keyword to draw inner shadow
+*/
+.shadow-inset {
+  box-shadow: inset 0 6px 18px rgba(0, 0, 0, 0.6);
+}
+
+/* 6. multiple shadows
+   ---------------------------------------------------------
+   Separate multiple shadows with commas. Rendered front → back.
+   Useful for layered depth or faux-outline effects.
+*/
+.shadow-multi {
+  box-shadow: 0 2px 0 rgba(255, 255, 255, 0.03) inset,
+    /* subtle inner highlight */ 0 8px 20px rgba(2, 10, 30, 0.55),
+    /* soft main shadow */ 0 20px 40px rgba(2, 10, 30, 0.35); /* deeper spread shadow */
+}
+
+/* 7. color and performance recommendations
+   ---------------------------------------------------------
+   - Use rgba() or hsla() to control alpha for softer shadows.
+   - Avoid huge blur + spread on many elements: can cause repaint cost.
+   - Prefer transform + pseudo-elements for complex animated shadows.
+*/
+
+/* 8. shadow on hover (combine with transition)
+   ---------------------------------------------------------
+   Make shadow animate smoothly by transitioning box-shadow.
+*/
+.shadow-hover {
+  transition: box-shadow 300ms ease, transform 300ms ease;
+}
+.shadow-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(2, 10, 30, 0.6);
+}
+
+/* =========================================================
+   PART B: BACKGROUND-IMAGE (Right learning order)
+   ========================================================= */
+
+/* 1. basic background-image
+   ---------------------------------------------------------
+   background-image: url('path/to/image.jpg');
+   If image is missing the property is ignored → provide fallback background-color.
+*/
+.bg-basic {
+  background-color: #0f1724;
+  background-image: url("https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=800&q=60");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover; /* cover keeps aspect and fills area */
+}
+
+/* 2. background-size: cover vs contain
+   ---------------------------------------------------------
+   - cover: image fills the container (may crop)
+   - contain: image fully visible, letterboxed if needed
+*/
+.bg-cover {
+  background-size: cover;
+}
+.bg-contain {
+  background-size: contain;
+  background-position: center;
+}
+
+/* 3. background-position
+   ---------------------------------------------------------
+   e.g. center, top left, right bottom, or percentages (50% 20%)
+*/
+.bg-pos {
+  background-position: top right;
+}
+
+/* 4. background-repeat
+   ---------------------------------------------------------
+   - repeat (default), no-repeat, repeat-x, repeat-y
+*/
+.bg-repeat {
+  background-repeat: repeat;
+}
+
+/* 5. background-attachment
+   ---------------------------------------------------------
+   - scroll (default): image moves with content
+   - fixed: image fixed to viewport (parallax-like effect)
+   - local: scrolls with element's content
+   NOTE: background-attachment: fixed has performance concerns on mobile.
+*/
+.bg-attachment {
+  background-attachment: fixed;
+}
+
+/* 6. multiple backgrounds
+   ---------------------------------------------------------
+   You can layer multiple backgrounds separated by commas.
+   The first is top-most.
+*/
+.bg-multiple {
+  background-image: linear-gradient(
+      180deg,
+      rgba(2, 6, 23, 0.4),
+      rgba(2, 6, 23, 0.6)
+    ),
+    url("https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=800&q=60");
+  background-size: cover;
+  background-position: center;
+}
+
+/* 7. CSS gradients as backgrounds (no image required)
+   ---------------------------------------------------------
+   linear-gradient(), radial-gradient(), conic-gradient()
+   Useful as fallbacks or overlays.
+*/
+.bg-gradient {
+  background-image: linear-gradient(135deg, #0ea5e9 0%, #8b5cf6 100%);
+}
+
+/* 8. blending and mix modes
+   ---------------------------------------------------------
+   background-blend-mode: multiply, screen, overlay, normal, etc.
+   Useful when combining images with colors or gradients.
+*/
+.bg-blend {
+  background-image: linear-gradient(
+      180deg,
+      rgba(255, 140, 0, 0.4),
+      rgba(160, 32, 240, 0.35)
+    ),
+    url("https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=800&q=60");
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-position: center;
+}
+
+/* 9. overlay technique (recommended)
+   ---------------------------------------------------------
+   Use a pseudo-element or multiple backgrounds to add an overlay
+   instead of editing the image file — keeps text readable.
+   Example below uses pseudo-element approach in HTML demo.
+*/
+
+/* 10. responsive & accessibility notes
+   ---------------------------------------------------------
+   - Provide good fallback background-color for slow/no-image cases.
+   - Use media queries to change background-position/size for different viewports.
+   - Ensure sufficient contrast between foreground text and background image
+     (use overlays, text-shadow, or increase text contrast).
+*/
+
+/* small utilities for demo labeling */
+.small {
+  font-size: 12px;
+  color: #9fb0c8;
+  margin-top: 8px;
+  display: block;
+}

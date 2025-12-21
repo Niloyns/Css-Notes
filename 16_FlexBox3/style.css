@@ -1,0 +1,618 @@
+/* =========================================================
+   CSS FLEXBOX – FULL NOTES (TOPIC-WISE)
+   File: flex-notes.css
+   Each topic: comment = explanation, then code only for that topic.
+   ========================================================= */
+
+/* =========================================================
+   TOPIC 0 – BASE DEMO STYLES (NOT FLEX THEORY)
+   ---------------------------------------------------------
+   These styles are only for making the demo look nicer.
+   They are not part of flexbox concepts.
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  background: #020617;
+  color: #e5e7eb;
+}
+
+h1 {
+  margin-bottom: 4px;
+}
+
+p.intro {
+  margin: 0 0 18px;
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+section.topic {
+  margin-bottom: 26px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+h2 {
+  margin: 18px 0 6px;
+  font-size: 18px;
+}
+
+p.topic-desc {
+  margin: 0 0 10px;
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+.demo-row {
+  background: #020617;
+  border-radius: 10px;
+  border: 1px solid #1f2937;
+  padding: 10px;
+  min-height: 60px;
+}
+
+/* generic flex item box */
+.box {
+  background: #1d4ed8;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 13px;
+  text-align: center;
+  color: #e5e7eb;
+  border: 1px solid rgba(15, 23, 42, 0.9);
+}
+
+.box.alt {
+  background: #0f766e;
+}
+
+.box.small {
+  font-size: 11px;
+  padding: 4px 8px;
+}
+
+.box.big {
+  font-size: 18px;
+}
+
+.box.small-text {
+  font-size: 11px;
+}
+
+.box.mid-text {
+  font-size: 15px;
+}
+
+.box.big-text {
+  font-size: 24px;
+}
+
+.tall {
+  height: 120px;
+}
+
+.multi {
+  height: 170px;
+}
+
+/* =========================================================
+   TOPIC 1 – FLEX CONTAINER (display: flex / inline-flex)
+   ---------------------------------------------------------
+   To use Flexbox:
+   - Make the parent a "flex container" using display: flex
+   - Children become "flex items"
+
+   display: flex;        → block-level flex container
+   display: inline-flex; → inline-level flex container
+   ========================================================= */
+
+.t1-flex-block {
+  display: flex;
+}
+
+.t1-flex-inline {
+  display: inline-flex;
+}
+
+/* =========================================================
+   TOPIC 2 – MAIN AXIS DIRECTION (flex-direction)
+   ---------------------------------------------------------
+   flex-direction decides MAIN AXIS direction.
+
+   Values:
+   - row           (default)  → left → right
+   - row-reverse             → right → left
+   - column                  → top → bottom
+   - column-reverse          → bottom → top
+   ========================================================= */
+
+.t2-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.t2-row-reverse {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.t2-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.t2-column-reverse {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+/* =========================================================
+   TOPIC 3 – FLEX WRAP (flex-wrap)
+   ---------------------------------------------------------
+   flex-wrap controls whether items stay on one line or wrap.
+
+   Values:
+   - nowrap (default) → all in one line, items shrink
+   - wrap            → items wrap to next line
+   - wrap-reverse    → wrap in opposite cross-axis direction
+   ========================================================= */
+
+.t3-nowrap {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.t3-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.t3-wrap-reverse {
+  display: flex;
+  flex-wrap: wrap-reverse;
+}
+
+/* =========================================================
+   TOPIC 4 – FLEX-FLOW (flex-direction + flex-wrap)
+   ---------------------------------------------------------
+   flex-flow is shorthand for:
+   flex-direction + flex-wrap
+
+   Example:
+   flex-flow: row wrap;
+   ========================================================= */
+
+.t4-flow-row-wrap {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+/* =========================================================
+   TOPIC 5 – GAP BETWEEN ITEMS (gap)
+   ---------------------------------------------------------
+   gap adds space BETWEEN flex items (no need for margins).
+
+   Syntax:
+   gap: <row-gap> <column-gap>;
+
+   Examples:
+   gap: 8px;       → 8px both row & column
+   gap: 8px 16px;  → 8px row, 16px column
+   ========================================================= */
+
+.t5-gap-small {
+  display: flex;
+  gap: 8px;
+}
+
+.t5-gap-large {
+  display: flex;
+  gap: 16px;
+}
+
+/* =========================================================
+   TOPIC 6 – JUSTIFY-CONTENT (MAIN AXIS ALIGNMENT)
+   ---------------------------------------------------------
+   justify-content controls alignment along MAIN AXIS.
+
+   Common values:
+   - flex-start   → pack items at start
+   - center       → center items
+   - flex-end     → pack items at end
+   - space-between→ first at start, last at end, others in between
+   - space-around → equal space around each item
+   - space-evenly → equal space between AND at edges
+   ========================================================= */
+
+.t6-justify-start {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.t6-justify-center {
+  display: flex;
+  justify-content: center;
+}
+
+.t6-justify-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.t6-justify-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.t6-justify-around {
+  display: flex;
+  justify-content: space-around;
+}
+
+.t6-justify-evenly {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* =========================================================
+   TOPIC 7 – ALIGN-ITEMS (CROSS AXIS, SINGLE LINE)
+   ---------------------------------------------------------
+   align-items aligns items along CROSS AXIS
+   (for a single flex line).
+
+   Values:
+   - stretch (default)
+   - flex-start
+   - flex-end
+   - center
+   - baseline (we'll demo baseline in Topic 13)
+   ========================================================= */
+
+.t7-align-start {
+  display: flex;
+  align-items: flex-start;
+}
+
+.t7-align-center {
+  display: flex;
+  align-items: center;
+}
+
+.t7-align-end {
+  display: flex;
+  align-items: flex-end;
+}
+
+/* =========================================================
+   TOPIC 8 – ALIGN-CONTENT (MULTIPLE LINES)
+   ---------------------------------------------------------
+   align-content aligns MULTIPLE ROWS/COLUMNS of items
+   along CROSS AXIS.
+
+   Works only when:
+   - flex-wrap is NOT nowrap
+   - there are multiple lines
+
+   Values:
+   - flex-start / flex-end / center
+   - space-between / space-around / stretch
+   ========================================================= */
+
+.t8-align-center {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.t8-align-space-between {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+}
+
+/* =========================================================
+   TOPIC 9 – FLEX-BASIS (INITIAL MAIN SIZE)
+   ---------------------------------------------------------
+   flex-basis sets the initial size of a flex item
+   along the MAIN AXIS (before grow/shrink).
+
+   Examples:
+   - flex-basis: 100px;
+   - flex-basis: 30%;
+   - flex-basis: auto; (default)
+   ========================================================= */
+
+.t9-container {
+  display: flex;
+  gap: 8px;
+}
+
+.t9-basis-100 {
+  flex-basis: 100px;
+}
+
+.t9-basis-200 {
+  flex-basis: 200px;
+}
+
+/* =========================================================
+   TOPIC 10 – FLEX-GROW (GROWTH RATIO)
+   ---------------------------------------------------------
+   flex-grow decides how much an item grows when
+   there is extra space.
+
+   - 0 (default) → item does NOT grow
+   - 1          → item can grow
+   - 2,3,...    → relative ratio compared to others
+   ========================================================= */
+
+.t10-container {
+  display: flex;
+  gap: 8px;
+}
+
+.t10-grow-0 {
+  flex-grow: 0;
+}
+
+.t10-grow-1 {
+  flex-grow: 1;
+}
+
+.t10-grow-2 {
+  flex-grow: 2;
+}
+
+/* =========================================================
+   TOPIC 11 – FLEX-SHRINK (SHRINK RATIO)
+   ---------------------------------------------------------
+   flex-shrink decides how much an item shrinks when
+   there is NOT enough space.
+
+   - 1 (default) → can shrink
+   - 0          → do NOT shrink (might overflow)
+   ========================================================= */
+
+.t11-container {
+  display: flex;
+  gap: 8px;
+}
+
+.t11-no-shrink {
+  flex-shrink: 0;
+}
+
+.t11-default-shrink {
+  flex-shrink: 1; /* default */
+}
+
+/* =========================================================
+   TOPIC 12 – FLEX SHORTHAND (flex: grow shrink basis)
+   ---------------------------------------------------------
+   flex: <grow> <shrink> <basis>;
+
+   Common patterns:
+   - flex: 1;         → flex: 1 1 0
+   - flex: 0 1 auto;  → default-ish behavior
+   - flex: 2 1 150px; → custom distribution
+   ========================================================= */
+
+.t12-container {
+  display: flex;
+  gap: 8px;
+}
+
+.t12-flex-1 {
+  flex: 1; /* 1 1 0 */
+}
+
+.t12-flex-auto {
+  flex: 0 1 auto;
+}
+
+.t12-flex-custom {
+  flex: 2 1 150px;
+}
+
+/* =========================================================
+   TOPIC 13 – ALIGN-SELF + BASELINE
+   ---------------------------------------------------------
+   align-self overrides align-items for a single item.
+
+   align-self values:
+   - auto
+   - flex-start
+   - flex-end
+   - center
+   - baseline
+   - stretch
+
+   Also:
+   align-items: baseline aligns text baselines.
+   ========================================================= */
+
+.t13-align-self-container {
+  display: flex;
+  height: 120px;
+}
+
+.t13-self-start {
+  align-self: flex-start;
+}
+
+.t13-self-center {
+  align-self: center;
+}
+
+.t13-self-end {
+  align-self: flex-end;
+}
+
+/* baseline demo */
+.t13-baseline-container {
+  display: flex;
+  align-items: baseline;
+}
+
+/* =========================================================
+   TOPIC 14 – ORDER (VISUAL ORDER ONLY)
+   ---------------------------------------------------------
+   order controls visual order of flex items.
+
+   Default = 0
+   Lower order value = appears earlier
+
+   NOTE:
+   Does NOT change DOM order, only visual order.
+   ========================================================= */
+
+.t14-container {
+  display: flex;
+  gap: 8px;
+}
+
+.t14-order-first {
+  order: -1;
+}
+
+.t14-order-last {
+  order: 2;
+}
+
+/* =========================================================
+   TOPIC 15 – CENTERING WITH FLEXBOX
+   ---------------------------------------------------------
+   Classic center pattern:
+
+   container {
+     display: flex;
+     justify-content: center;  (main axis)
+     align-items: center;      (cross axis)
+   }
+
+   Works for unknown widths & heights.
+   ========================================================= */
+
+.t15-center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* =========================================================
+   TOPIC 16 – REAL EXAMPLE 1: NAVBAR LAYOUT
+   ---------------------------------------------------------
+   Typical structure:
+
+   .navbar {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+   }
+
+   - left: logo
+   - middle: links
+   - right: buttons
+   ========================================================= */
+
+.t16-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background: #020617;
+  border-radius: 10px;
+  border: 1px solid #1f2937;
+}
+
+.t16-nav-left,
+.t16-nav-center,
+.t16-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* =========================================================
+   TOPIC 17 – REAL EXAMPLE 2: RESPONSIVE CARD ROW
+   ---------------------------------------------------------
+   Use:
+   - flex-wrap: wrap;
+   - flex-basis + min-width;
+   to build responsive rows of cards.
+   ========================================================= */
+
+.t17-card-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.t17-card {
+  flex: 1 1 180px;
+  min-width: 160px;
+}
+
+/* =========================================================
+   TOPIC 18 – REAL EXAMPLE 3: SIMPLE SIDEBAR + CONTENT
+   ---------------------------------------------------------
+   Layout:
+   [ sidebar ][ main content ]
+
+   Using:
+   - flex-direction: row;
+   - fixed-width sidebar + flexible main area.
+   ========================================================= */
+
+.t18-layout {
+  display: flex;
+  gap: 10px;
+}
+
+.t18-sidebar {
+  flex: 0 0 140px; /* fixed width sidebar */
+}
+
+.t18-main {
+  flex: 1; /* take remaining space */
+}
+
+/* =========================================================
+   TOPIC 19 – REAL EXAMPLE 4: COLUMN LAYOUT (MOBILE FIRST)
+   ---------------------------------------------------------
+   Use column direction on small screens:
+   .column -> items stack
+
+   (Later with media queries you can switch to row.)
+   ========================================================= */
+
+.t19-column-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* =========================================================
+   TOPIC 20 – QUICK SUMMARY (NO EXTRA CODE)
+   ---------------------------------------------------------
+   Main things to remember:
+
+   1) Make container flex:       display:flex
+   2) Choose main axis:          flex-direction
+   3) Allow wrapping:            flex-wrap
+   4) Align on main axis:        justify-content
+   5) Align on cross axis:       align-items / align-content
+   6) Control item size:         flex-basis, flex-grow, flex-shrink, flex
+   7) Per item alignment:        align-self
+   8) Visual order:              order
+   9) Center patterns:           justify + align on container
+   10) Real layouts:             navbars, cards, sidebars
+   ========================================================= */

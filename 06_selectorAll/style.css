@@ -1,0 +1,95 @@
+/* =====================================================
+   CSS IMPORTANT SELECTORS - STUDY NOTES
+   ===================================================== */
+
+/* 1. UNIVERSAL SELECTOR (*) 
+   Applies style to all elements
+*/
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* 2. ELEMENT SELECTOR
+   Directly targets HTML tags
+*/
+p {
+  color: #e5e7eb;
+}
+
+/* 3. CLASS SELECTOR (.class)
+   Used for reusable styling
+*/
+.highlight {
+  color: yellow;
+  background: #334155;
+  padding: 5px;
+}
+
+/* 4. ID SELECTOR (#id)
+   Used for unique elements
+*/
+#unique {
+  color: #38bdf8;
+  font-weight: bold;
+}
+
+/* 5. GROUP SELECTOR
+   Apply same style to multiple elements
+*/
+h3,
+h4 {
+  color: #f97316;
+}
+
+/* 6. DESCENDANT SELECTOR
+   targets elements inside another
+*/
+.box p {
+  color: #22c55e;
+}
+
+/* 7. CHILD SELECTOR (>)
+   Direct child only
+*/
+.parent > p {
+  color: #ef4444;
+}
+
+/* 8. ADJACENT SIBLING (+)
+   First sibling only
+*/
+h5 + p {
+  color: #a855f7;
+}
+
+/* 9. GENERAL SIBLING (~)
+   All siblings after
+*/
+h6 ~ p {
+  color: #06b6d4;
+}
+
+/* 10. ATTRIBUTE SELECTOR
+   Targets based on attributes
+*/
+input[type="password"] {
+  background: #1e293b;
+  color: white;
+}
+
+/* 11. PSEUDO CLASS
+   Based on state
+*/
+.btn:hover {
+  background: #4ade80;
+  color: black;
+}
+
+/* 12. PSEUDO ELEMENT
+   Styles part of element
+*/
+.before-text::before {
+  content: "★ ";
+  color: gold;
+}

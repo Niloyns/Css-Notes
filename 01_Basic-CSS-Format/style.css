@@ -1,0 +1,16 @@
+/* ================================ */
+/* BASIC CSS FORMAT - NOTES */
+/* ================================ */
+
+/*
+CSS SYNTAX STRUCTURE
+---------------------
+selector {
+property: value;
+}
+*/
+
+/* Example: Styling h1 element */
+h1 {
+  color: red; /* Changes text color to red */
+}

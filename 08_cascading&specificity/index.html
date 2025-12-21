@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cascading & Specificity Demo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>CSS Cascading & Specificity - Live Demo</h1>
+
+    <!-- ======================================================
+     1. SOURCE ORDER DEMO
+====================================================== -->
+    <h2>1. Source Order (Last rule wins)</h2>
+    <div class="demo-box order-demo">
+      .order-demo → Last CSS rule color applies
+    </div>
+
+    <!-- ======================================================
+     2. SPECIFICITY LEVELS DEMO
+====================================================== -->
+    <h2>2. Specificity (Element vs Class vs ID)</h2>
+    <p id="sp-note" class="note-demo demo-box">
+      p#sp-note.note-demo → ID wins over class & element
+    </p>
+
+    <!-- ======================================================
+     3. COMBINED SELECTOR SPECIFICITY
+====================================================== -->
+    <h2>3. Combined Selectors</h2>
+    <div class="card demo-box">
+      <p class="title">.card .title → More specific than .title</p>
+    </div>
+
+    <!-- ======================================================
+     4. !IMPORTANT DEMO
+====================================================== -->
+    <h2>4. !important Rule</h2>
+    <p class="demo-box important-demo">
+      .important-demo → !important overrides normal rules
+    </p>
+
+    <!-- ======================================================
+     5. INLINE STYLE VS CSS
+====================================================== -->
+    <h2>5. Inline Style vs External CSS</h2>
+    <p class="demo-box inline-test" style="color: orange">
+      Inline style wins over external CSS
+    </p>
+
+    <!-- ======================================================
+     6. INHERITANCE DEMO
+====================================================== -->
+    <h2>6. Inheritance</h2>
+    <div class="demo-box parent-text">
+      Parent Text (green)
+      <p>This paragraph inherits the color automatically</p>
+    </div>
+
+    <!-- ======================================================
+     7. FULL PRACTICAL EXAMPLE
+====================================================== -->
+    <h2>7. Full Cascade Decision Example</h2>
+
+    <p id="demo" class="msg special override demo-box" style="color: orange">
+      Final winner example (watch which color applies)
+    </p>
+
+    <p style="font-size: 14px; color: #94a3b8">
+      Explanation: Inline style tries to apply orange, but .override uses
+      !important → so RED wins.
+    </p>
+  </body>
+</html>

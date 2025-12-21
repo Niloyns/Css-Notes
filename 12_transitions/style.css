@@ -1,0 +1,306 @@
+/* =========================================================
+   CSS TRANSITIONS – IMPORTANT NOTES (RIGHT ORDER)
+   Code Editor Study Format + Live Demo
+   ========================================================= */
+
+/* =========================================================
+   0. BASIC PAGE & DEMO BOX STYLE
+   (Only for good visual output)
+   ========================================================= */
+
+body {
+  background: #020617;
+  color: #e5e7eb;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 8px;
+}
+
+p {
+  margin-bottom: 20px;
+  color: #9ca3af;
+}
+
+.section {
+  margin-bottom: 30px;
+}
+
+.demo {
+  width: 260px;
+  height: 80px;
+  background: #1e293b;
+  border: 2px solid #38bdf8;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  cursor: pointer;
+  transition: none; /* each example adds its own transition */
+}
+
+/* =========================================================
+   1. WHAT IS CSS TRANSITION?
+   ---------------------------------------------------------
+   Transition = smooth change between two visual states.
+
+   State examples:
+   - normal   -> :hover
+   - normal   -> :active
+   - class A  -> class B
+
+   Without transition:
+   - style jumps instantly
+
+   With transition:
+   - style changes gradually over time
+   ========================================================= */
+
+/* =========================================================
+   2. BASIC SYNTAX (CONCEPT FIRST)
+   ---------------------------------------------------------
+   A transition runs when a CSS PROPERTY VALUE CHANGES.
+
+   Pattern:
+   - normal state: define transition
+   - changed state: change some property
+
+   Here: only background changes smoothly.
+   ========================================================= */
+
+.basic-box {
+  /* WHAT to animate + HOW LONG */
+  transition: background 0.5s; /* shorthand: property + duration */
+  background: #1d4ed8; /* blue */
+}
+
+.basic-box:hover {
+  background: #dc2626; /* red (will animate in 0.5s) */
+}
+
+/* =========================================================
+   3. CORE TRANSITION PROPERTIES (FOUNDATION)
+   ---------------------------------------------------------
+   4 main properties:
+
+   1) transition-property        -> WHAT will animate
+   2) transition-duration        -> HOW LONG it runs
+   3) transition-timing-function -> SPEED curve
+   4) transition-delay           -> WHEN it starts
+
+   We will demo each one below.
+   ========================================================= */
+
+/* =========================================================
+   4. transition-property (WHAT changes)
+   ---------------------------------------------------------
+   Tells the browser which property should animate.
+
+   If you only want background to animate, use:
+   transition-property: background;
+
+   Here:
+   - Only background is animated on hover.
+   ========================================================= */
+
+.prop-demo {
+  background: #1e293b;
+  transition-property: background; /* only background animates */
+  transition-duration: 0.5s; /* time for the change */
+}
+
+.prop-demo:hover {
+  background: #22c55e; /* green */
+}
+
+/* =========================================================
+   5. transition-duration (HOW LONG)
+   ---------------------------------------------------------
+   Controls how long the animation takes.
+
+   Values:
+   - 1s   = 1 second
+   - 0.3s = 0.3 seconds
+
+   Here:
+   - The box scales up over 1 second.
+   ========================================================= */
+
+.duration-demo {
+  transition-property: transform; /* animate transform */
+  transition-duration: 1s; /* 1 second animation */
+}
+
+.duration-demo:hover {
+  transform: scale(1.3); /* zoom effect */
+}
+
+/* =========================================================
+   6. transition-timing-function (SPEED style)
+   ---------------------------------------------------------
+   Controls the SPEED CURVE of the animation.
+
+   Common values:
+   - ease        (default: slow-fast-slow)
+   - linear      (constant speed)
+   - ease-in     (slow start)
+   - ease-out    (slow end)
+   - ease-in-out (slow start & end)
+
+   Here:
+   - We use ease-in-out for smooth start and end.
+   ========================================================= */
+
+.timing-demo {
+  transition-property: transform;
+  transition-duration: 1s;
+  transition-timing-function: ease-in-out; /* smooth curve */
+}
+
+.timing-demo:hover {
+  transform: translateX(60px); /* slide to the right */
+}
+
+/* =========================================================
+   7. transition-delay (WHEN to start)
+   ---------------------------------------------------------
+   Adds a delay BEFORE the transition begins.
+
+   Example:
+   transition-delay: 1s; -> wait 1 second, then animate.
+
+   Here:
+   - Hover the box
+   - Wait 1s
+   - Then background color starts changing.
+   ========================================================= */
+
+.delay-demo {
+  transition-property: background;
+  transition-duration: 0.6s;
+  transition-delay: 1s; /* WAIT 1 second */
+}
+
+.delay-demo:hover {
+  background: #f97316; /* orange */
+}
+
+/* =========================================================
+   8. MULTIPLE PROPERTY TRANSITION
+   ---------------------------------------------------------
+   You can animate more than one property at the same time.
+
+   Two ways:
+   1) Long form:
+      transition-property: width, background;
+      transition-duration: 1s, 1s;
+
+   2) Shorthand list:
+      transition: width 1s, background 1s;
+
+   Here:
+   - Width and background both animate together.
+   ========================================================= */
+
+.multi-demo {
+  transition-property: width, background;
+  transition-duration: 1s, 1s;
+}
+
+.multi-demo:hover {
+  width: 340px; /* wider */
+  background: #f97316; /* orange */
+}
+
+/* =========================================================
+   9. SHORTHAND SYNTAX (MOST USED)
+   ---------------------------------------------------------
+   Full shorthand pattern:
+   transition: property duration timing-function delay;
+
+   Example:
+   transition: background 0.5s ease 0.2s;
+
+   If you use "all":
+   transition: all 0.6s ease-in-out;
+
+   It will animate ANY changing property.
+
+   Here:
+   - background and transform both animate together.
+   ========================================================= */
+
+.shorthand-demo {
+  transition: all 0.6s ease-in-out; /* property + duration + timing */
+}
+
+.shorthand-demo:hover {
+  background: #a855f7; /* purple */
+  transform: rotate(6deg); /* slight rotation */
+}
+
+/* =========================================================
+   10. SIMPLE BEGINNER FORM (RECOMMENDED)
+   ---------------------------------------------------------
+   Easiest practical pattern:
+
+   transition: 0.4s;
+
+   This means:
+   - transition-property: all;
+   - transition-duration: 0.4s;
+   - timing-function: ease (default);
+   - delay: 0s (default);
+
+   Perfect for most hover effects.
+   ========================================================= */
+
+.simple-demo {
+  transition: 0.4s; /* animate all changes in 0.4s */
+}
+
+.simple-demo:hover {
+  background: #22c55e;
+  transform: translateY(-10px); /* small lift up */
+}
+
+/* =========================================================
+   11. IMPORTANT RULES TO REMEMBER
+   ---------------------------------------------------------
+   ✅ Transition works ONLY when the value changes
+      (e.g., on :hover, :focus, class change)
+
+   ✅ Good properties to animate:
+      - background, color
+      - transform (scale, translate, rotate)
+      - opacity
+      - width, height
+
+   ❌ Bad / non-animatable:
+      - display (none <-> block)
+      - position static -> relative (jumpy)
+
+   ✅ transition-property is optional:
+      transition: 0.5s;
+      == transition-property: all;
+      == transition-duration: 0.5s;
+   ========================================================= */
+
+/* =========================================================
+   12. PERFECT LEARNING ORDER SUMMARY (FOR REVISION)
+   ---------------------------------------------------------
+   1. What is a transition (concept)
+   2. transition-property (WHAT changes)
+   3. transition-duration (HOW LONG)
+   4. transition-timing-function (SPEED style)
+   5. transition-delay (WAIT time)
+   6. Multiple property transitions
+   7. Shorthand transition
+
+   Memory Trick:
+   WHAT → TIME → SPEED → WAIT → MANY → SHORT
+   ========================================================= */
