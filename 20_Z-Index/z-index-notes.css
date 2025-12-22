@@ -1,0 +1,245 @@
+/* =========================================================
+   CSS Z-INDEX – FULL NOTES (TOPIC-WISE)
+   File: z-index-notes.css
+   Style: Code-editor notes (comments explain everything)
+   ========================================================= */
+
+/* =========================================================
+   TOPIC 0 – BASE DEMO STYLES (NOT Z-INDEX THEORY)
+   ---------------------------------------------------------
+   These styles are ONLY for visual understanding.
+   They are NOT part of the z-index concept.
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  background: #020617;
+  color: #e5e7eb;
+}
+
+section.topic {
+  margin-bottom: 28px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+h1 {
+  margin-bottom: 6px;
+}
+h2 {
+  margin: 18px 0 6px;
+}
+
+p.desc {
+  margin: 0 0 10px;
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+.demo {
+  position: relative;
+  height: 140px;
+  border: 1px solid #1f2937;
+  border-radius: 10px;
+  background: #020617;
+}
+
+.box {
+  position: absolute;
+  width: 100px;
+  height: 70px;
+  border-radius: 6px;
+  color: white;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.red {
+  background: #ef4444;
+}
+.blue {
+  background: #3b82f6;
+}
+.green {
+  background: #22c55e;
+}
+
+/* =========================================================
+   TOPIC 1 – WHAT IS Z-INDEX?
+   ---------------------------------------------------------
+   z-index controls the STACKING ORDER of elements
+   along the Z-axis (front ↔ back).
+
+   Higher z-index → element appears ON TOP
+   Lower z-index  → element appears BELOW
+   ========================================================= */
+
+/* =========================================================
+   TOPIC 2 – z-index WORKS ONLY WITH POSITIONED ELEMENTS
+   ---------------------------------------------------------
+   z-index ONLY works if position is:
+   ✔ relative
+   ✔ absolute
+   ✔ fixed
+   ✔ sticky
+
+   ❌ z-index does NOT work with position: static
+   ========================================================= */
+
+.t2-box {
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================================================
+   TOPIC 3 – DEFAULT STACKING ORDER
+   ---------------------------------------------------------
+   If z-index is NOT defined:
+   - Elements are stacked based on HTML order
+   - Later elements appear above earlier ones
+   ========================================================= */
+
+.t3-red {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+
+.t3-blue {
+  position: absolute;
+  top: 50px;
+  left: 60px;
+}
+
+/* =========================================================
+   TOPIC 4 – BASIC z-index COMPARISON
+   ---------------------------------------------------------
+   Higher number appears on top.
+
+   Example:
+   z-index: 10 → above
+   z-index: 1  → below
+   ========================================================= */
+
+.t4-red {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  z-index: 1;
+}
+
+.t4-blue {
+  position: absolute;
+  top: 50px;
+  left: 60px;
+  z-index: 10;
+}
+
+/* =========================================================
+   TOPIC 5 – NEGATIVE z-index
+   ---------------------------------------------------------
+   z-index can be NEGATIVE.
+
+   Negative values push elements BEHIND others.
+
+   ⚠ Warning:
+   - Element may go behind parent/background
+   ========================================================= */
+
+.t5-green {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  z-index: -1;
+}
+
+/* =========================================================
+   TOPIC 6 – SAME z-index VALUE
+   ---------------------------------------------------------
+   If multiple elements have SAME z-index:
+   - HTML order decides stacking
+   - Later elements appear on top
+   ========================================================= */
+
+.t6-red,
+.t6-blue {
+  position: absolute;
+  z-index: 5;
+}
+
+.t6-red {
+  top: 30px;
+  left: 30px;
+}
+
+.t6-blue {
+  top: 50px;
+  left: 60px;
+}
+
+/* =========================================================
+   TOPIC 7 – z-index WITH PARENT (STACKING CONTEXT)
+   ---------------------------------------------------------
+   A new STACKING CONTEXT is created when:
+   - position + z-index is applied to parent
+   - opacity < 1
+   - transform applied
+   - filter applied
+
+   Child z-index is LIMITED to its parent context.
+   ========================================================= */
+
+.t7-parent {
+  position: relative;
+  z-index: 1;
+}
+
+.t7-child {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  z-index: 999; /* still inside parent */
+}
+
+/* =========================================================
+   TOPIC 8 – COMMON REAL USE CASES
+   ---------------------------------------------------------
+   z-index is commonly used for:
+   - dropdown menus
+   - modals
+   - tooltips
+   - sticky headers
+   ========================================================= */
+
+.t8-modal {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+
+/* =========================================================
+   TOPIC 9 – BEST PRACTICES
+   ---------------------------------------------------------
+   ✔ Use small z-index numbers (1–10)
+   ✔ Avoid huge numbers unless necessary
+   ✔ Create z-index scale in project
+   ✔ Understand stacking context before debugging
+   ========================================================= */
+
+/* =========================================================
+   TOPIC 10 – QUICK SUMMARY
+   ---------------------------------------------------------
+   - z-index controls vertical stacking
+   - Works only on positioned elements
+   - Higher value = on top
+   - Parent stacking context limits children
+   ========================================================= */

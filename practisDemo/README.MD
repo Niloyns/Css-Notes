@@ -1,202 +1,27 @@
-<div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=35&duration=3000&pause=1000&color=00D9FF&center=true&vCenter=true&width=600&height=100&lines=Hi+%F0%9F%91%8B+I'm+Niloy+Sarkar;Full+Stack+Developer+%F0%9F%9A%80;Building+Amazing+Web+Apps+%F0%9F%92%BB" alt="Typing SVG" />
-</div>
+# Pet Dog Website
 
-<div align="center">
-  <img src="https://user-images.githubusercontent.com/74038190/229223263-cf2e4b07-2615-4f87-9c38-e37600f8381a.gif" width="400" alt="coding gif"/>
-</div>
+This project showcases various dog breeds with their characteristics and images.
 
----
+## Features
 
-<div align="center">
-  <h2>🚀 About Me</h2>
-  <p>
-    💻 Passionate Full Stack Developer who loves creating impactful web applications<br/>
-    🎯 Building scalable solutions for individuals, startups, and enterprises<br/>
-    ⚡ Always learning new technologies and best practices<br/>
-    🌟 Turning ideas into reality through clean, efficient code
-  </p>
-</div>
+- Responsive design for different screen sizes
+- Attractive layout with images and descriptions
+- Easy navigation through different dog breeds
 
----
+## Technologies Used
 
-<h2 align="center">🛠️ Tech Stack & Tools</h2>
+- HTML5
+- CSS3
 
-<div align="center">
-  <table>
-    <tr>
-      <td align="center" width="120">
-        <img src="https://skillicons.dev/icons?i=java" width="50" height="50" alt="Java" />
-        <br><sub><b>Java</b></sub>
-      </td>
-      <td align="center" width="120">
-        <img src="https://skillicons.dev/icons?i=python" width="50" height="50" alt="Python" />
-        <br><sub><b>Python</b></sub>
-      </td>
-      <td align="center" width="120">
-        <img src="https://skillicons.dev/icons?i=javascript" width="50" height="50" alt="JavaScript" />
-        <br><sub><b>JavaScript</b></sub>
-      </td>
-      <td align="center" width="120">
-        <img src="https://skillicons.dev/icons?i=html" width="50" height="50" alt="HTML5" />
-        <br><sub><b>HTML5</b></sub>
-      </td>
-      <td align="center" width="120">
-        <img src="https://skillicons.dev/icons?i=css" width="50" height="50" alt="CSS3" />
-        <br><sub><b>CSS3</b></sub>
-      </td>
-    </tr>
-    <tr>
-      <td align="center" width="120">
-        <img src="https://skillicons.dev/icons?i=sass" width="50" height="50" alt="Sass" />
-        <br><sub><b>Sass</b></sub>
-      </td>
-      <td align="center" width="120">
-        <img src="https://skillicons.dev/icons?i=bootstrap" width="50" height="50" alt="Bootstrap" />
-        <br><sub><b>Bootstrap</b></sub>
-      </td>
-      <td align="center" width="120">
-        <img src="https://skillicons.dev/icons?i=jquery" width="50" height="50" alt="jQuery" />
-        <br><sub><b>jQuery</b></sub>
-      </td>
-      <td align="center" width="120">
-        <img src="https://skillicons.dev/icons?i=nodejs" width="50" height="50" alt="Node.js" />
-        <br><sub><b>Node.js</b></sub>
-      </td>
-      <td align="center" width="120">
-        <img src="https://skillicons.dev/icons?i=express" width="50" height="50" alt="Express.js" />
-        <br><sub><b>Express.js</b></sub>
-      </td>
-    </tr>
-    <tr>
-      <td align="center" width="120">
-        <img src="https://skillicons.dev/icons?i=react" width="50" height="50" alt="React" />
-        <br><sub><b>React</b></sub>
-      </td>
-      <td align="center" width="120">
-        <img src="https://skillicons.dev/icons?i=nextjs" width="50" height="50" alt="Next.js" />
-        <br><sub><b>Next.js</b></sub>
-      </td>
-      <td align="center" width="120">
-        <img src="https://skillicons.dev/icons?i=mongodb" width="50" height="50" alt="MongoDB" />
-        <br><sub><b>MongoDB</b></sub>
-      </td>
-      <td align="center" width="120">
-        <img src="https://skillicons.dev/icons?i=mysql" width="50" height="50" alt="MySQL" />
-        <br><sub><b>MySQL</b></sub>
-      </td>
-      <td align="center" width="120">
-        <img src="https://skillicons.dev/icons?i=git" width="50" height="50" alt="Git" />
-        <br><sub><b>Git</b></sub>
-      </td>
-    </tr>
-    <tr>
-      <td align="center" width="120">
-        <img src="https://skillicons.dev/icons?i=docker" width="50" height="50" alt="Docker" />
-        <br><sub><b>Docker</b></sub>
-      </td>
-      <td align="center" width="120">
-        <img src="https://skillicons.dev/icons?i=wordpress" width="50" height="50" alt="WordPress" />
-        <br><sub><b>WordPress</b></sub>
-      </td>
-      <td align="center" width="120">
-        <img src="https://img.shields.io/badge/AI-ML-000000?style=flat-square&logo=googleai&logoColor=white" width="50" height="50" alt="AI/ML" />
-        <br><sub><b>AI / ML</b></sub>
-      </td>
-      <td align="center" width="120">
-        <!-- placeholder to keep table balanced -->
-      </td>
-      <td align="center" width="120">
-        <!-- placeholder to keep table balanced -->
-      </td>
-    </tr>
-  </table>
-</div>
+## How to Run
 
----
+1. Clone the repository to your local machine.
+2. Open `index.html` in your web browser.
 
-<div align="center">
-  <h2>📊 GitHub: Contributions & Quick Stats</h2>
+## Author
 
-  <!-- Contributions (works) -->
-  <img src="https://ghchart.rshah.org/Niloyns" alt="GitHub Contributions" />
+- Niloy
 
-  <br/>
+## License This project is licensed under the MIT License. See the LICENSE file for details.
 
-  <!-- Stable badges -->
-  <img src="https://img.shields.io/github/followers/Niloyns?style=for-the-badge&label=Followers" alt="Followers" />
-  <img src="https://img.shields.io/github/last-commit/Niloyns/Todo_API?style=for-the-badge&label=Last%20commit" alt="Last Commit" />
-  <a href="https://github.com/Niloyns">
-    <img src="https://img.shields.io/badge/View%20Profile-GitHub-181717?style=for-the-badge&logo=github" alt="View Profile" />
-  </a>
-</div>
-
----
-
-<div align="center">
-  <h2>🏆 Featured Projects</h2>
-</div>
-
-<div align="center">
-  <a href="https://github.com/Niloyns/AI-Code-Review-System">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Niloyns&repo=AI-Code-Review-System&theme=radical&hide_border=false" alt="AI Code Review System" />
-  </a>
-  <a href="https://github.com/Niloyns/Transaction-Tracker-App">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Niloyns&repo=Transaction-Tracker-App&theme=radical&hide_border=false" alt="Transaction Tracker App" />
-  </a>
-</div>
-
-<div align="center">
-  <a href="https://github.com/Niloyns/Todo_API">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Niloyns&repo=Todo_API&theme=radical&hide_border=false" alt="Todo API" />
-  </a>
-</div>
-
----
-
-<div align="center">
-  <h2>🌐 Connect With Me</h2>
-  <a href="https://www.linkedin.com/in/niloy-sarkar-a734841b0/">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white&style=flat-square" alt="LinkedIn" />
-  </a>
-  <a href="mailto:niloysarkar1998@gmail.com">
-    <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white&style=flat-square" alt="Gmail" />
-  </a>
-  <a href="https://www.instagram.com/">
-    <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white&style=flat-square" alt="Instagram" />
-  </a>
-  <a href="https://www.youtube.com/">
-    <img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white&style=flat-square" alt="YouTube" />
-  </a>
-</div>
-
----
-
-<div align="center">
-  <h2>💭 Quote I Live By</h2>
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=20&duration=3000&pause=1000&color=FFD700&center=true&vCenter=true&width=600&height=80&lines=Code+is+like+humor.+When+you+have+to+explain+it%2C+it's+bad.;Always+keep+learning+and+growing!+%F0%9F%9A%80" alt="Quote" />
-</div>
-
----
-
-<div align="center">
-  <h2>🎯 Current Goals</h2>
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=18&duration=4000&pause=1000&color=32CD32&center=true&vCenter=true&width=700&height=120&lines=%F0%9F%94%AD+Currently+working+on+exciting+projects;%F0%9F%8C%B1+Learning+new+technologies+daily;%F0%9F%91%AF+Looking+to+collaborate+on+innovative+ideas;%F0%9F%92%AC+Ask+me+about+Full+Stack+Development;%F0%9F%93%AB+Reach+out+for+freelance+opportunities!" alt="Goals" />
-</div>
-
----
-
-<div align="center">
-  <h2>🎨 Fun Zone</h2>
-  <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="300" alt="coding gif"/>
-</div>
-
----
-
-<div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=150&section=footer&text=Thanks%20for%20visiting!&fontSize=50&fontColor=fff&animation=twinkling&fontAlignY=75"/>
-</div>
-
-<div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=25&duration=3000&pause=1000&color=FF6B6B&center=true&vCenter=true&width=600&height=80&lines=Let's+build+something+amazing+together!+%E2%9C%A8;Happy+Coding!+%F0%9F%92%BB" alt="Footer" />
-</div>
+This project is licensed under the MIT License. See the LICENSE file for details.

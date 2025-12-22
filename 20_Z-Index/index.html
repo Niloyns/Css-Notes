@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CSS z-index – Topic-wise Demo</title>
+    <link rel="stylesheet" href="z-index-notes.css" />
+  </head>
+  <body>
+    <h1>CSS z-index – Topic-wise Demo</h1>
+
+    <section class="topic">
+      <h2>Topic 2 – Positioned element</h2>
+      <div class="demo">
+        <div class="box red t2-box">z-index works</div>
+      </div>
+    </section>
+
+    <section class="topic">
+      <h2>Topic 3 – Default stacking</h2>
+      <div class="demo">
+        <div class="box red t3-red">HTML first</div>
+        <div class="box blue t3-blue">HTML later</div>
+      </div>
+    </section>
+
+    <section class="topic">
+      <h2>Topic 4 – Higher z-index on top</h2>
+      <div class="demo">
+        <div class="box red t4-red">z:1</div>
+        <div class="box blue t4-blue">z:10</div>
+      </div>
+    </section>
+
+    <section class="topic">
+      <h2>Topic 5 – Negative z-index</h2>
+      <div class="demo">
+        <div class="box green t5-green">z:-1</div>
+      </div>
+    </section>
+
+    <section class="topic">
+      <h2>Topic 6 – Same z-index</h2>
+      <div class="demo">
+        <div class="box red t6-red">First</div>
+        <div class="box blue t6-blue">Second</div>
+      </div>
+    </section>
+
+    <section class="topic">
+      <h2>Topic 7 – Stacking context</h2>
+      <div class="demo t7-parent">
+        <div class="box blue t7-child">child z:999</div>
+      </div>
+    </section>
+
+    <section class="topic">
+      <h2>Topic 8 – Modal example</h2>
+      <div class="demo">
+        <div class="box green t8-modal">Modal</div>
+      </div>
+    </section>
+  </body>
+</html>
