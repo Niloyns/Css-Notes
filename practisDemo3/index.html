@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pizza Resturent</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/d646a66da9.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <h1 class="logo">Pizza Resturent</h1>
+      <div class="nav-container">
+        <!-- navigation bar -->
+        <nav class="navbar">
+          <a href="#">ABOUT</a>
+          <a href="#">MENU</a>
+          <a href="#">TESTIMONY</a>
+          <a href="#">FINDUS</a>
+          <a href="#">OURTEAM</a>
+        </nav>
+      </div>
+      <!-- social media icons -->
+      <div class="social-icons">
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-whatsapp"></i>
+      </div>
+    </header>
+    <!-- Main section -->
+    <main>
+      <section class="hero-section">
+        <video class="bg-video" autoplay muted loop playsinline>
+          <source src="photo/bgvideo.mp4" type="video/mp4" />
+        </video>
+
+        <div class="hero-content">
+          <h2 class="hero-title">Craving for a cheesy pizza?</h2>
+          <hr class="hero-hr hr" />
+          <p class="hero-text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+            ac placerat dui. Vestibulum ut felis et lorem porta congue vitae nec
+            turpis. Aliquam quis leo at nunc tempor faucibus et ac massa. Lorem
+            ipsum dolor sit amet consectetur adipisicing elit. Magni labore
+            ratione doloremque, illum harum perferendis placeat enim omnis
+            aliquam, non eius dolore esse. Beatae necessitatibus similique
+            maxime harum mollitia modi?
+          </p>
+        </div>
+      </section>
+
+      <section class="about-section">
+        <h2>ABOUT US</h2>
+        <hr class="about-hr" />
+        <div class="about-content">
+          <div>
+            <hr class="hr" />
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+              ac placerat dui. Vestibulum ut felis et lorem porta congue vitae
+              nec turpis. Lorem ipsum dolor sit amet consectetur adipisicing
+              elit. Quo minima deleniti impedit, deserunt necessitatibus libero.
+              Sed placeat enim obcaecati repellat? Aspernatur autem nostrum
+              veritatis, facilis eius fugit aliquam deserunt maxime! Aliquam
+              quis leo at nunc tempor faucibus et ac massa.
+            </p>
+          </div>
+
+          <img src="photo/dough.png" alt="dough image" class="dough-image" />
+        </div>
+      </section>
+
+      <!-- menu section -->
+      <section class="menu-section">
+        <h2>OUR MENU</h2>
+        <hr class="menu-hr" />
+
+        <div class="menu-items">
+          <div class="menu-item">
+            <img src="photo/pizza1.jpg" alt="Pizza 1" />
+            <h3>Margherita Pizza</h3>
+            <p>Classic delight with 100% real mozzarella cheese</p>
+            <span class="price">&#8377 350</span>
+          </div>
+          <div class="menu-item">
+            <img src="photo/pizza2.jpg" alt="Pizza 2" />
+            <h3>Pepperoni Pizza</h3>
+            <p>A classic favorite loaded with pepperoni</p>
+            <span class="price">&#8377 450</span>
+          </div>
+          <div class="menu-item">
+            <img src="photo/pizza3.jpg" alt="Pizza 3" />
+            <h3>Veggie Supreme</h3>
+            <p>Loaded with fresh veggies and mozzarella cheese</p>
+            <span class="price">&#8377 600</span>
+          </div>
+          <div class="menu-item">
+            <img src="photo/pizza1.jpg" alt="Pizza 1" />
+            <h3>Margherita Pizza</h3>
+            <p>Classic delight with 100% real mozzarella cheese</p>
+            <span class="price">&#8377 350</span>
+          </div>
+          <div class="menu-item">
+            <img src="photo/pizza2.jpg" alt="Pizza 2" />
+            <h3>Pepperoni Pizza</h3>
+            <p>A classic favorite loaded with pepperoni</p>
+            <span class="price">&#8377 450</span>
+          </div>
+          <div class="menu-item">
+            <img src="photo/pizza3.jpg" alt="Pizza 3" />
+            <h3>Veggie Supreme</h3>
+            <p>Loaded with fresh veggies and mozzarella cheese</p>
+            <span class="price">&#8377 600</span>
+          </div>
+          
+        </div>
+      </section>
+
+      <!-- carousel -->
+     
+       <section class="testimony-section py-5 text-white">
+        <hr class="mb-4" />
+
+  <div class="container">
+    <h2 class="text-center mb-4">carousel</h2> 
+
+    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+
+      <!-- Indicators -->
+      <div class="carousel-indicators ">
+        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2"></button>
+      </div>
+
+      <!-- Slides -->
+      <div class="carousel-inner text-center">
+
+        <div class="carousel-item active">
+          <div class="card bg-secondary border-0  mx-auto" style="max-width: 600px;">
+            <img src="./photo/pizza1.jpg" alt="">
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="card bg-secondary border-0  mx-auto" style="max-width: 600px;">
+            <img src="./photo/pizza2.jpg" alt="">
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="card bg-secondary border-0  mx-auto" style="max-width: 600px;">
+            <img src="./photo/pizza3.jpg" alt="">
+          </div>
+        </div>
+
+      </div>
+      <!-- Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+      
+    </div>
+  </div>
+
+</section>
+
+<!-- Gallery Section -->
+  <section class="gallery-section-container">
+    <div class="gallery-section">
+      <h2>GALLERY</h2>
+      <hr class="gallery-hr" />
+      <div class="gallery-images">
+        <img src="photo/pizza1.jpg" class="gallery-image1" alt="Gallery Image 1" />
+        <img src="photo/pizza2.jpg" class="gallery-image2" alt="Gallery Image 2" />
+        <img src="photo/pizza3.jpg" class="gallery-image3" alt="Gallery Image 3" />
+        <img src="photo/pizza1.jpg" class="gallery-image4" alt="Gallery Image 4" />
+        <img src="photo/pizza2.jpg" class="gallery-image5" alt="Gallery Image 5" />
+        <img src="photo/pizza3.jpg" class="gallery-image6" alt="Gallery Image 6" />
+      </div>
+    </div>
+  </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <section > 
+        <h2>Find Us</h2>
+        <hr class="footer-hr" />
+        
+        <div class="footer-container">
+          <div class="footer-content">
+            <p>Lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur eaque sint facilis quibusdam voluptatum adipisci atque nam error suscipit magnam.ipsum dolor sit amet consectetur adipisicing elit. Modi et, culpa quaerat molestias deserunt quis. Repellendus dolor omnis aut beatae!
+            </p>
+            <p>123 Pizza Street, Flavor Town, kolkata</p>
+            <p>Email: info@pizzaresturent.com</p>
+            <p>Phone: +91 98765 43210</p>
+          </div>
+
+         <!-- google map integrate -->
+          <div class="map-container">
+            <iframe
+              src="https://www.google.com/maps?q=22.5726,88.3639&output=embed"
+              width="100%"
+              height="250"
+              style="border:0;"
+              loading="lazy">
+            </iframe>
+          </div>
+        </div>
+      </section>
+      <p class="footer-note">&copy; 2024 Pizza Resturent. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

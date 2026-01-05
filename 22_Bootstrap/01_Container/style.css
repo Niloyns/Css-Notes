@@ -1,0 +1,131 @@
+/* =========================================================
+   BOOTSTRAP CONTAINER – PURE NOTES (CODE EDITOR STYLE)
+   File: bootstrap-container-notes.css
+   ========================================================= */
+
+/* =========================================================
+   TOPIC 0 – BASE DEMO STYLES (NOT BOOTSTRAP THEORY)
+   ---------------------------------------------------------
+   These styles are ONLY for visual understanding.
+   Bootstrap container behavior comes from Bootstrap CSS.
+   ========================================================= */
+
+body {
+  background: #020617;
+  color: #e5e7eb;
+  padding: 20px;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+section.topic {
+  margin-bottom: 28px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+.demo-box {
+  background: #1d4ed8;
+  color: white;
+  padding: 16px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* =========================================================
+   TOPIC 1 – WHAT IS A BOOTSTRAP CONTAINER?
+   ---------------------------------------------------------
+   Container is a WRAPPER element used to align and
+   center page content.
+
+   Bootstrap containers:
+   - add horizontal padding
+   - control max-width at breakpoints
+   - keep layout responsive
+   ========================================================= */
+
+/* =========================================================
+   TOPIC 2 – .container (FIXED WIDTH)
+   ---------------------------------------------------------
+   .container provides a RESPONSIVE fixed-width container.
+
+   Width changes at breakpoints:
+   - small screens → full width
+   - large screens → fixed max-width
+
+   Used for:
+   - websites
+   - dashboards
+   - standard layouts
+   ========================================================= */
+
+/* =========================================================
+   TOPIC 3 – .container-fluid (FULL WIDTH)
+   ---------------------------------------------------------
+   .container-fluid always takes 100% width
+   across all screen sizes.
+
+   Used for:
+   - full-width sections
+   - banners
+   - edge-to-edge layouts
+   ========================================================= */
+
+/* =========================================================
+   TOPIC 4 – RESPONSIVE CONTAINERS (BREAKPOINT-SPECIFIC)
+   ---------------------------------------------------------
+   Bootstrap provides breakpoint-based containers:
+
+   .container-sm   → fixed-width from ≥576px
+   .container-md   → fixed-width from ≥768px
+   .container-lg   → fixed-width from ≥992px
+   .container-xl   → fixed-width from ≥1200px
+   .container-xxl  → fixed-width from ≥1400px
+
+   Before breakpoint → behaves like container-fluid
+   After breakpoint  → behaves like container
+   ========================================================= */
+
+/* =========================================================
+   TOPIC 5 – WHEN TO USE WHICH CONTAINER
+   ---------------------------------------------------------
+   .container        → most common (recommended)
+   .container-fluid  → full width layouts
+   .container-*-*    → hybrid responsive control
+
+   Best practice:
+   Use ONE container per section, not nested unnecessarily.
+   ========================================================= */
+
+/* =========================================================
+   TOPIC 6 – CONTAINER + GRID RELATION
+   ---------------------------------------------------------
+   Container is REQUIRED for Bootstrap grid system.
+
+   Structure:
+   .container
+     └── .row
+           └── .col-*
+
+   Grid columns MUST be inside a container.
+   ========================================================= */
+
+/* =========================================================
+   TOPIC 7 – COMMON MISTAKES
+   ---------------------------------------------------------
+   ❌ Using rows without container
+   ❌ Nesting container inside container
+   ❌ Using container-fluid everywhere
+   ❌ Forgetting responsive containers
+
+   ✔ Use container → row → col pattern
+   ========================================================= */
+
+/* =========================================================
+   TOPIC 8 – QUICK SUMMARY
+   ---------------------------------------------------------
+   - Container centers content
+   - container = fixed responsive width
+   - container-fluid = always full width
+   - container-{breakpoint} = hybrid
+   - Required for Bootstrap grid
+   ========================================================= */

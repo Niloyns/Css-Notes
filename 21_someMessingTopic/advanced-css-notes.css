@@ -1,0 +1,210 @@
+/* =========================================================
+   ADVANCED CSS – PURE NOTES (TOPIC-WISE)
+   Topics:
+   1. CSS Variables
+   2. CSS Units
+   3. clamp()
+   4. Overflow
+   5. Pseudo-elements
+   6. object-fit
+   ========================================================= */
+
+/* =========================================================
+   BASE DEMO STYLES (NOT THEORY)
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  background: #020617;
+  color: #e5e7eb;
+}
+
+section.topic {
+  margin-bottom: 28px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+h2 {
+  margin: 18px 0 6px;
+}
+
+.demo {
+  padding: 12px;
+  border: 1px solid #1f2937;
+  border-radius: 10px;
+  background: #020617;
+}
+
+.box {
+  padding: 12px;
+  border-radius: 8px;
+  background: #1d4ed8;
+  text-align: center;
+}
+
+/* =========================================================
+   TOPIC 1 – CSS VARIABLES (CUSTOM PROPERTIES)
+   ---------------------------------------------------------
+   CSS variables store reusable values.
+
+   Syntax:
+   --variable-name: value;
+
+   Access:
+   var(--variable-name)
+
+   Scope:
+   - :root → global
+   - selector → local
+   ========================================================= */
+
+:root {
+  --primary-color: #22c55e;
+  --spacing: 12px;
+}
+
+.t1-box {
+  background: var(--primary-color);
+  padding: var(--spacing);
+}
+
+/* =========================================================
+   TOPIC 2 – CSS UNITS
+   ---------------------------------------------------------
+   Absolute:
+   px → fixed size
+
+   Relative:
+   %  → relative to parent
+   em → relative to parent font-size
+   rem→ relative to root font-size
+
+   Viewport:
+   vw → viewport width
+   vh → viewport height
+   ========================================================= */
+
+.t2-px {
+  width: 200px;
+}
+
+.t2-percent {
+  width: 50%;
+}
+
+.t2-rem {
+  font-size: 1.5rem;
+}
+
+.t2-vw {
+  width: 30vw;
+}
+
+/* =========================================================
+   TOPIC 3 – clamp()
+   ---------------------------------------------------------
+   clamp(min, preferred, max)
+
+   Automatically adjusts size based on screen.
+
+   Common use:
+   Responsive font sizes
+   ========================================================= */
+
+.t3-text {
+  font-size: clamp(14px, 2vw, 22px);
+}
+
+/* =========================================================
+   TOPIC 4 – OVERFLOW
+   ---------------------------------------------------------
+   Controls content overflow when size is fixed.
+
+   Values:
+   visible (default)
+   hidden
+   scroll
+   auto
+
+   Also:
+   overflow-x
+   overflow-y
+   ========================================================= */
+
+.t4-container {
+  width: 200px;
+  height: 80px;
+  border: 2px solid #22c55e;
+}
+
+.t4-hidden {
+  overflow: hidden;
+}
+
+.t4-scroll {
+  overflow: scroll;
+}
+
+.t4-auto {
+  overflow: auto;
+}
+
+/* =========================================================
+   TOPIC 5 – PSEUDO-ELEMENTS
+   ---------------------------------------------------------
+   Pseudo-elements style PART of an element.
+
+   Common:
+   ::before
+   ::after
+   ::first-letter
+   ::first-line
+
+   NOTE:
+   ::before / ::after require 'content'
+   ========================================================= */
+
+.t5-text::first-letter {
+  font-size: 32px;
+  color: #f97316;
+}
+
+.t5-box::before {
+  content: "★ ";
+  color: gold;
+}
+
+.t5-box::after {
+  content: " ★";
+  color: gold;
+}
+
+/* =========================================================
+   TOPIC 6 – OBJECT-FIT
+   ---------------------------------------------------------
+   object-fit controls how images/videos fit in container.
+
+   Values:
+   fill     (default)
+   contain
+   cover
+   none
+   scale-down
+
+   object-position controls alignment.
+   ========================================================= */
+
+.t6-img {
+  width: 200px;
+  height: 120px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 8px;
+}
