@@ -38,7 +38,7 @@ CSS_Notes/
 
 | #   | Topic                                                | Notes                                                             | Demo                                                              |
 | --- | ---------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
-| 1   | Display (block, inline, inline-block)                | [01-display-notes.css](./01-core-layout/01-display-notes.css)     | [01-display-demo.html](./01-core-layout/01-display-demo.html)     |
+| 1   | Display (block, inline, inline-block)                | [01-display-notes.css](./01_Basic-CSS-Format/style.css)           | [01-display-demo.html](./01_Basic-CSS-Format/index.html)          |
 | 2   | CSS Box Model                                        | [02-box-model-notes.css](./01-core-layout/02-box-model-notes.css) | [02-box-model-demo.html](./01-core-layout/02-box-model-demo.html) |
 | 3   | Position (static, relative, absolute, fixed, sticky) | [03-position-notes.css](./01-core-layout/03-position-notes.css)   | [03-position-demo.html](./01-core-layout/03-position-demo.html)   |
 | 4   | z-index & offsets                                    | [04-z-index-notes.css](./01-core-layout/04-z-index-notes.css)     | [04-z-index-demo.html](./01-core-layout/04-z-index-demo.html)     |
@@ -47,7 +47,7 @@ CSS_Notes/
 
 | #   | Topic                                  | Notes                                                                       | Demo                                                                        |
 | --- | -------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| 5   | Flex Container & Items                 | [05-flex-container-notes.css](./02-flexbox/05-flex-container-notes.css)     | [05-flex-container-demo.html](./02-flexbox/05-flex-container-demo.html)     |
+| 5   | Flex Container & Items                 | [05-flex-container-notes.css](./16_FlexBox3/style.css)                      | [05-flex-container-demo.html](./16_FlexBox3/index.html)                     |
 | 6   | flex-direction, flex-wrap, flex-flow   | [06-flex-direction-notes.css](./02-flexbox/06-flex-direction-notes.css)     | [06-flex-direction-demo.html](./02-flexbox/06-flex-direction-demo.html)     |
 | 7   | justify-content (all values)           | [07-justify-content-notes.css](./02-flexbox/07-justify-content-notes.css)   | [07-justify-content-demo.html](./02-flexbox/07-justify-content-demo.html)   |
 | 8   | align-items, align-content, align-self | [08-align-notes.css](./02-flexbox/08-align-notes.css)                       | [08-align-demo.html](./02-flexbox/08-align-demo.html)                       |
