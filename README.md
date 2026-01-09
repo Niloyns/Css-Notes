@@ -34,42 +34,42 @@ CSS_Notes/
 
 ## 📌 All CSS Topics with Links
 
-| #   | Topic                     | Folder                                                  |
-| --- | ------------------------- | ------------------------------------------------------- |
-| 1   | Basic CSS Format          | [01_Basic-CSS-Format](./01_Basic-CSS-Format/)           |
-| 2   | Including CSS             | [02_Including-CSS](./02_Including-CSS/)                 |
-| 3   | Color Property            | [03_ColorProperty](./03_ColorProperty/)                 |
-| 4   | Color System              | [04_colorSystem](./04_colorSystem/)                     |
-| 5   | Text Align                | [05_TextAlign](./05_TextAlign/)                         |
-| 6   | Selector All              | [06_selectorAll](./06_selectorAll/)                     |
-| 7   | Pseudo Classes & Elements | [07_Psudo](./07_Psudo/)                                 |
-| 8   | Cascading & Specificity   | [08_cascading&specificity](./08_cascading&specificity/) |
-| 9   | Box Model                 | [09_BoxModel](./09_BoxModel/)                           |
-| 10  | Inline vs Block           | [10_InlineVSblock](./10_InlineVSblock/)                 |
-| 11  | Alpha & Opacity           | [11_Alpha&Opacity](./11_Alpha&Opacity/)                 |
-| 12  | Transitions               | [12_transitions](./12_transitions/)                     |
-| 13  | Transform                 | [13_transform](./13_transform/)                         |
-| 14  | Box Shadow & Image        | [14_BoxShadow&image](./14_BoxShadow&image/)             |
-| 15  | Position                  | [15_position](./15_position/)                           |
-| 16  | FlexBox (Intro)           | [16_FlexBox](./16_FlexBox/)                             |
-| 17  | FlexBox (Part 2)          | [16_flexbox2](./16_flexbox2/)                           |
-| 18  | FlexBox (Part 3)          | [16_FlexBox3](./16_FlexBox3/)                           |
-| 19  | Grid                      | [17_Grid](./17_Grid/)                                   |
-| 20  | Grid (Part 2)             | [17_grid2](./17_grid2/)                                 |
-| 21  | Animation                 | [18_Animation](./18_Animation/)                         |
-| 22  | Media Queries             | [19_mediaQueries](./19_mediaQueries/)                   |
-| 23  | Z-Index                   | [20_Z-Index](./20_Z-Index/)                             |
-| 24  | Advanced CSS Topics       | [21_someMessingTopic](./21_someMessingTopic/)           |
-| 25  | Bootstrap                 | [22_Bootstrap](./22_Bootstrap/)                         |
+| #   | Topic                     | HTML                                                | CSS                                                                    |
+| --- | ------------------------- | --------------------------------------------------- | ---------------------------------------------------------------------- |
+| 1   | Basic CSS Format          | [index.html](./01_Basic-CSS-Format/index.html)      | [style.css](./01_Basic-CSS-Format/style.css)                           |
+| 2   | Including CSS             | [index.html](./02_Including-CSS/index.html)         | [style.css](./02_Including-CSS/style.css)                              |
+| 3   | Color Property            | [index.html](./03_ColorProperty/index.html)         | [style.css](./03_ColorProperty/style.css)                              |
+| 4   | Color System              | [index.html](./04_colorSystem/index.html)           | [style.css](./04_colorSystem/style.css)                                |
+| 5   | Text Align                | [index.html](./05_TextAlign/index.html)             | [style.css](./05_TextAlign/style.css)                                  |
+| 6   | Selector All              | [index.html](./06_selectorAll/index.html)           | [style.css](./06_selectorAll/style.css)                                |
+| 7   | Pseudo Classes & Elements | [index.html](./07_Psudo/index.html)                 | [style.css](./07_Psudo/style.css)                                      |
+| 8   | Cascading & Specificity   | [index.html](./08_cascading&specificity/index.html) | [style.css](./08_cascading&specificity/style.css)                      |
+| 9   | Box Model                 | [index.html](./09_BoxModel/index.html)              | [style.css](./09_BoxModel/style.css)                                   |
+| 10  | Inline vs Block           | [index.html](./10_InlineVSblock/index.html)         | [style.css](./10_InlineVSblock/style.css)                              |
+| 11  | Alpha & Opacity           | [index.html](./11_Alpha&Opacity/index.html)         | [style.css](./11_Alpha&Opacity/style.css)                              |
+| 12  | Transitions               | [index.html](./12_transitions/index.html)           | [style.css](./12_transitions/style.css)                                |
+| 13  | Transform                 | [index.html](./13_transform/index.html)             | [style.css](./13_transform/style.css)                                  |
+| 14  | Box Shadow & Image        | [index.html](./14_BoxShadow&image/index.html)       | [style.css](./14_BoxShadow&image/style.css)                            |
+| 15  | Position                  | [index.html](./15_position/index.html)              | [style.css](./15_position/style.css)                                   |
+| 16  | FlexBox (Intro)           | [index.html](./16_FlexBox/index.html)               | [style.css](./16_FlexBox/style.css)                                    |
+| 17  | FlexBox (Part 2)          | [index.html](./16_flexbox2/index.html)              | [style.css](./16_flexbox2/style.css)                                   |
+| 18  | FlexBox (Part 3)          | [index.html](./16_FlexBox3/index.html)              | [style.css](./16_FlexBox3/style.css)                                   |
+| 19  | Grid                      | [index.html](./17_Grid/index.html)                  | [style.css](./17_Grid/style.css)                                       |
+| 20  | Grid (Part 2)             | [index.html](./17_grid2/index.html)                 | [style.css](./17_grid2/style.css)                                      |
+| 21  | Animation                 | [index.html](./18_Animation/index.html)             | [animation-notes.css](./18_Animation/animation-notes.css)              |
+| 22  | Media Queries             | [index.html](./19_mediaQueries/index.html)          | [media-queries-notes.css](./19_mediaQueries/media-queries-notes.css)   |
+| 23  | Z-Index                   | [index.html](./20_Z-Index/index.html)               | [z-index-notes.css](./20_Z-Index/z-index-notes.css)                    |
+| 24  | Advanced CSS Topics       | [index.html](./21_someMessingTopic/index.html)      | [advanced-css-notes.css](./21_someMessingTopic/advanced-css-notes.css) |
+| 25  | Bootstrap                 | [index.html](./22_Bootstrap/index.html)             | [style.css](./22_Bootstrap/style.css)                                  |
 
 ### 📚 Practice Demos
 
-| Demo            | Folder                          |
-| --------------- | ------------------------------- |
-| Practice Demo 1 | [practisDemo1](./practisDemo1/) |
-| Practice Demo 2 | [practisDemo2](./practisDemo2/) |
-| Practice Demo 3 | [practisDemo3](./practisDemo3/) |
-| Practice Demo 4 | [practisDemo4](./practisDemo4/) |
+| Demo            | HTML                                    | CSS                                   |
+| --------------- | --------------------------------------- | ------------------------------------- |
+| Practice Demo 1 | [index.html](./practisDemo1/index.html) | [style.css](./practisDemo1/style.css) |
+| Practice Demo 2 | [index.html](./practisDemo2/index.html) | [style.css](./practisDemo2/style.css) |
+| Practice Demo 3 | [index.html](./practisDemo3/index.html) | [style.css](./practisDemo3/style.css) |
+| Practice Demo 4 | [index.html](./practisDemo4/index.html) | [style.css](./practisDemo4/style.css) |
 
 ---
 
